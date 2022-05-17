@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>组件化 | Garfill Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.b6bfb1ac.css" as="style"><link rel="preload" href="/blog/assets/js/app.54f4db6a.js" as="script"><link rel="preload" href="/blog/assets/js/2.e69a48f0.js" as="script"><link rel="preload" href="/blog/assets/js/14.413f9e96.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6aefd31d.js"><link rel="prefetch" href="/blog/assets/js/11.533f52c4.js"><link rel="prefetch" href="/blog/assets/js/12.4227b7cb.js"><link rel="prefetch" href="/blog/assets/js/13.b9875199.js"><link rel="prefetch" href="/blog/assets/js/15.f259f537.js"><link rel="prefetch" href="/blog/assets/js/16.7a0e524b.js"><link rel="prefetch" href="/blog/assets/js/17.7f724a36.js"><link rel="prefetch" href="/blog/assets/js/18.e9c819f7.js"><link rel="prefetch" href="/blog/assets/js/19.076edbb5.js"><link rel="prefetch" href="/blog/assets/js/20.c50a51ee.js"><link rel="prefetch" href="/blog/assets/js/21.fc275f95.js"><link rel="prefetch" href="/blog/assets/js/22.9ebf55a2.js"><link rel="prefetch" href="/blog/assets/js/23.aea94949.js"><link rel="prefetch" href="/blog/assets/js/24.73d9a913.js"><link rel="prefetch" href="/blog/assets/js/25.7198305a.js"><link rel="prefetch" href="/blog/assets/js/26.ee045415.js"><link rel="prefetch" href="/blog/assets/js/27.0d8e93aa.js"><link rel="prefetch" href="/blog/assets/js/28.c2ace0e8.js"><link rel="prefetch" href="/blog/assets/js/29.854a3fd9.js"><link rel="prefetch" href="/blog/assets/js/3.bddad0a2.js"><link rel="prefetch" href="/blog/assets/js/30.cc264c6c.js"><link rel="prefetch" href="/blog/assets/js/31.042666a0.js"><link rel="prefetch" href="/blog/assets/js/32.21c171f2.js"><link rel="prefetch" href="/blog/assets/js/33.9c2367bf.js"><link rel="prefetch" href="/blog/assets/js/34.a89e06e6.js"><link rel="prefetch" href="/blog/assets/js/35.6e94a157.js"><link rel="prefetch" href="/blog/assets/js/36.c02e9046.js"><link rel="prefetch" href="/blog/assets/js/4.b8a1e6a9.js"><link rel="prefetch" href="/blog/assets/js/5.e7e225c8.js"><link rel="prefetch" href="/blog/assets/js/6.163ff0cd.js"><link rel="prefetch" href="/blog/assets/js/7.0d948b14.js"><link rel="prefetch" href="/blog/assets/js/8.30cfb4e0.js"><link rel="prefetch" href="/blog/assets/js/9.d96ecf8f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.b6bfb1ac.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Garfill Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>组件化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Vue/componentInstance/#分析createcomponent函数" class="sidebar-link">分析createComponent函数</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/Vue/componentInstance/#组件构造器生成函数-extend" class="sidebar-link">组件构造器生成函数（extend）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/Vue/componentInstance/#组件的钩子函数安装" class="sidebar-link">组件的钩子函数安装</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/Vue/componentInstance/#组件的-init-钩子函数" class="sidebar-link">组件的 init 钩子函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/#createcomponentinstanceforvnode-函数" class="sidebar-link">createComponentInstanceForVnode 函数</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/#组件的初始化-init" class="sidebar-link">组件的初始化 _init</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/#组件的-update-过程" class="sidebar-link">组件的 _update 过程</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/#回到createcomponent方法中" class="sidebar-link">回到createComponent方法中</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="组件化"><a href="#组件化" class="header-anchor">#</a> 组件化</h1> <blockquote><p>本章节主要分析 Vue 组件的创建过程</p></blockquote> <p>在创建  <strong>VNode</strong> 过程中，调用到 <strong>vdom</strong> 的 <strong>create-element.js</strong></p> <p>调用栈：$mount  -&gt; mountComponent -&gt; Watcher -&gt; get -&gt; updateComponent(vm._update) -&gt; render -&gt;  createElement</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/create-element.js</span>
+<span class="token keyword">function</span> <span class="token function">_createElement</span><span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> data<span class="token punctuation">,</span> children<span class="token punctuation">,</span> normalizationType</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 以 render(h) { return h(APP)} 为例子</span>
+  <span class="token comment">// 传入的tag是APP对象</span>
+  vnode <span class="token operator">=</span> <span class="token function">createComponent</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> children<span class="token punctuation">)</span> <span class="token comment">// 根据构造的信息创建组件的 vnode</span>
+  
+  <span class="token comment">// 如果是通过 components 注册使用的组件</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">!</span>data <span class="token operator">||</span> <span class="token operator">!</span>data<span class="token punctuation">.</span>pre<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>Ctor <span class="token operator">=</span> <span class="token function">resolveAssest</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span>$options<span class="token punctuation">,</span> <span class="token string">'components'</span><span class="token punctuation">,</span> tag<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    vnode <span class="token operator">=</span> <span class="token function">createComponent</span><span class="token punctuation">(</span>Ctor<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> children<span class="token punctuation">,</span> tag<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+  <span class="token comment">// 这里的context 都是指当前的 vm 实例</span>
+  <span class="token keyword">return</span> vnode <span class="token comment">// 最后是返回生成的 组件vnode</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="分析createcomponent函数"><a href="#分析createcomponent函数" class="header-anchor">#</a> 分析createComponent函数</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/create-components.js</span>
+<span class="token keyword">function</span> <span class="token function">createComponnet</span><span class="token punctuation">(</span><span class="token parameter">Ctor<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> children<span class="token punctuation">,</span> tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">const</span> baseCtor <span class="token operator">=</span> context<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>_base 
+  <span class="token comment">// 这里 baseCtor = Vue, 之前通过初始化过程中混入 (global-api.js)</span>
+  <span class="token comment">// Vue.options._base = Vue</span>
+  <span class="token comment">// 之后再通过 mergeOptions 合并到实例</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isObject</span><span class="token punctuation">(</span>Ctor<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Ctor <span class="token operator">=</span> baseCtor<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>Ctor<span class="token punctuation">)</span> <span class="token comment">// 这里就是 Vue.extend(Ctor)，返回一个用该配置生成的构造器</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+  <span class="token function">installComponentHooks</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token comment">// data是创建时提供，就是render函数写法中的data对象</span>
+  <span class="token keyword">const</span> name <span class="token operator">=</span> Ctor<span class="token punctuation">.</span>options<span class="token punctuation">.</span>name <span class="token operator">||</span> tag
+  <span class="token keyword">const</span> vnode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VNode</span><span class="token punctuation">(</span>
+  	<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">vue-component-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Ctor<span class="token punctuation">.</span>cid<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> <span class="token string">''</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    data<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> context<span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> Ctor<span class="token punctuation">,</span> propsData<span class="token punctuation">,</span> listeners<span class="token punctuation">,</span> tag<span class="token punctuation">,</span> children <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+    asyncFactory
+  <span class="token punctuation">)</span>
+  <span class="token comment">// 这一行是创建 vnode 过程，其中的倒数第二个参数为 componentOptions 选项</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">return</span> vnode <span class="token comment">// 返回生成的组件 vnode</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="组件构造器生成函数-extend"><a href="#组件构造器生成函数-extend" class="header-anchor">#</a> 组件构造器生成函数（extend）</h2> <p>上述生成 <strong>组件vnode</strong> 的过程中，会调用 <strong>Vue.extend</strong> ，生成组件对应的构造器函数</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// global-api/extend.js</span>
+<span class="token keyword">function</span> <span class="token function">initExtend</span> <span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Vue<span class="token punctuation">.</span>cid <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> cid <span class="token operator">=</span> <span class="token number">0</span>
+  
+  Vue<span class="token punctuation">.</span><span class="token function-variable function">extend</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">extendOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    extendOptions <span class="token operator">=</span> extendOptions <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment">// 注意这里是 Vue 的静态方法，this = Vue</span>
+    <span class="token keyword">const</span> Super <span class="token operator">=</span> <span class="token keyword">this</span> 
+    <span class="token keyword">const</span> SuperId <span class="token operator">=</span> Super<span class="token punctuation">.</span>cid
+    <span class="token comment">// 缓存已创建过的构造器</span>
+    <span class="token keyword">const</span> cachedCtors <span class="token operator">=</span> extendOptions<span class="token punctuation">.</span>_Ctor <span class="token operator">||</span> <span class="token punctuation">(</span>extendOptions<span class="token punctuation">.</span>_Ctor <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cachedCtors<span class="token punctuation">[</span>SuperId<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> cachedCtors<span class="token punctuation">[</span>SuperId<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> name <span class="token operator">=</span> extendOptions<span class="token punctuation">.</span>name <span class="token operator">||</span> Super<span class="token punctuation">.</span>options<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+    <span class="token comment">// 子类构造器，开发过程中的单文件组件就是通过这个构造器生成</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">Sub</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">VueComponent</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 实际上执行Sub.prototype._init =&gt; S</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_init</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Super</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Sub
+    <span class="token comment">// 以上构成 Sub 继承 Super 的原型链</span>
+    Sub<span class="token punctuation">.</span>cid <span class="token operator">=</span> cid<span class="token operator">++</span>
+    <span class="token comment">// 合并传入的选项和 Super 的选项</span>
+    Sub<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token function">mergeOptions</span><span class="token punctuation">(</span>Super<span class="token punctuation">.</span>options<span class="token punctuation">,</span> extendOptions<span class="token punctuation">)</span>
+    Sub<span class="token punctuation">[</span><span class="token string">'super'</span><span class="token punctuation">]</span> <span class="token operator">=</span> Super
+    <span class="token comment">// 将Super 的 静态方法赋值 给Sub 使用，之后也可以将 Sub 作为新的 Super 进行 Sub.extend() 等等</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Sub<span class="token punctuation">.</span>options<span class="token punctuation">.</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">initProps</span><span class="token punctuation">(</span>Sub<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Sub<span class="token punctuation">.</span>options<span class="token punctuation">.</span>computed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">initComputed</span><span class="token punctuation">(</span>Sub<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    Sub<span class="token punctuation">.</span>extend <span class="token operator">=</span> Super<span class="token punctuation">.</span>extend
+    Sub<span class="token punctuation">.</span>mixin <span class="token operator">=</span> Super<span class="token punctuation">.</span>mixin
+    Sub<span class="token punctuation">.</span>use <span class="token operator">=</span> Super<span class="token punctuation">.</span>use
+    <span class="token comment">// ['component', 'directive', 'filter'] Super的选项混入</span>
+    <span class="token constant">ASSET_TYPES</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Sub<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> Super<span class="token punctuation">[</span>type<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Sub<span class="token punctuation">.</span>options<span class="token punctuation">.</span>components<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> Sub
+    <span class="token punctuation">}</span>
+    Sub<span class="token punctuation">.</span>superOptions <span class="token operator">=</span> Super<span class="token punctuation">.</span>options
+    Sub<span class="token punctuation">.</span>extendOptions <span class="token operator">=</span> extendOptions
+    Sub<span class="token punctuation">.</span>sealedOptions <span class="token operator">=</span> <span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> Sub<span class="token punctuation">.</span>options<span class="token punctuation">)</span>
+    cachedCtors<span class="token punctuation">[</span>SuperId<span class="token punctuation">]</span> <span class="token operator">=</span> Sub <span class="token comment">// 缓存已生成的构造器，当传入相同对象的时候就能获取，避免重复生成</span>
+    <span class="token keyword">return</span> Sub
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="组件的钩子函数安装"><a href="#组件的钩子函数安装" class="header-anchor">#</a> 组件的钩子函数安装</h2> <p>在上述生成 <strong>组件vnode</strong> 的过程中，调用到 <strong>installComponentHooks</strong> 函数来安装 <strong>组件的钩子</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/create-component.js</span>
+<span class="token keyword">function</span> <span class="token function">installComponentHooks</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> hooks <span class="token operator">=</span> data<span class="token punctuation">.</span>hook <span class="token operator">||</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>hook <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> hooksToMerge<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> key <span class="token operator">=</span> hooksToMerge<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">const</span> existing <span class="token operator">=</span> hooks<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">const</span> toMerge <span class="token operator">=</span> componentVNodeHooks<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>existing <span class="token operator">!==</span> toMerge <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>existing <span class="token operator">&amp;&amp;</span> existing<span class="token punctuation">.</span>_merged<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      hooks<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> existing <span class="token operator">?</span> <span class="token function">mergeHook</span><span class="token punctuation">(</span>toMerge<span class="token punctuation">,</span> existing<span class="token punctuation">)</span> <span class="token operator">:</span> toMerge
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 简单来说就是将传入的data中的 hook 对象与组件默认的hooks合并</span>
+<span class="token keyword">const</span> componentVNodeHooks <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">prepatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>到这里为止，已经生成 组件vnode（也可以叫占位vnode）， 接下来是将 vnode 返回给上一个调用栈，一般来说是 vdom/create-element.js 中的 _createElement 方法</strong></p> <p><strong>在  _createElement 方法中再将返回的 vnode 返回到上一级调用栈，就是 vm 的 _update 方法</strong></p> <p><strong>在 _update 方法中，通过 patch 方法，最终会将 vnode 传递到 vdom/patch.js 的 patch 方法中</strong></p> <p><strong>再通过其中的 createComponent 方法生成对应的 patch</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/patch.js</span>
+<span class="token keyword">function</span> <span class="token function">createComponent</span> <span class="token punctuation">(</span><span class="token parameter">vnode<span class="token punctuation">,</span> insertedVnodeQueue<span class="token punctuation">,</span> parentElm<span class="token punctuation">,</span> refElm</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> vnode<span class="token punctuation">.</span>data
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> isReactivated <span class="token operator">=</span> <span class="token function">isDef</span><span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>componentInstance<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> i<span class="token punctuation">.</span>keepAlive
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>hook<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>init<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">i</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> <span class="token boolean">false</span> <span class="token comment">/* hydrating */</span><span class="token punctuation">)</span> 
+      <span class="token comment">// 调用hooks中的init钩子</span>
+      <span class="token comment">// 在 vdom/create-component.js 中生成占位 vnode 添加的 componentVNodeHooks</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>componentInstance<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">initComponent</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> insertedVnodeQueue<span class="token punctuation">)</span>
+      <span class="token function">insert</span><span class="token punctuation">(</span>parentElm<span class="token punctuation">,</span> vnode<span class="token punctuation">.</span>elm<span class="token punctuation">,</span> refElm<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isTrue</span><span class="token punctuation">(</span>isReactivated<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reactivateComponent</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> insertedVnodeQueue<span class="token punctuation">,</span> parentElm<span class="token punctuation">,</span> refElm<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="组件的-init-钩子函数"><a href="#组件的-init-钩子函数" class="header-anchor">#</a> 组件的 init 钩子函数</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/create-components.js</span>
+<span class="token keyword">const</span> componentVNodeHooks <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">vnode<span class="token punctuation">,</span> hydrating</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>componentInstance <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>vnode<span class="token punctuation">.</span>componentInstance<span class="token punctuation">.</span>_isDestroyed <span class="token operator">&amp;&amp;</span> vnode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>keepAlive<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// kept-alive components</span>
+      <span class="token keyword">const</span> mountedNode <span class="token operator">=</span> vnode
+      componentVNodeHooks<span class="token punctuation">.</span><span class="token function">prepatch</span><span class="token punctuation">(</span>mountedNode<span class="token punctuation">,</span> mountedNode<span class="token punctuation">)</span> <span class="token comment">// keep-alive 重复渲染会当成prepatch</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 传入对应的 占位vnode</span>
+      <span class="token comment">// createComponentInstanceForVnode 会返回一个 vm 实例！！！</span>
+      <span class="token keyword">const</span> child <span class="token operator">=</span> vnode<span class="token punctuation">.</span>componentInstance <span class="token operator">=</span> <span class="token function">createComponentInstanceForVnode</span><span class="token punctuation">(</span>
+        vnode<span class="token punctuation">,</span>
+        activeInstance <span class="token comment">// 这里的 activeInstance 就是这个 组件vnode 的 父vm 实例</span>
+      <span class="token punctuation">)</span>
+      <span class="token comment">// 这里$mount 传入的是 undefined</span>
+      child<span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span>hydrating <span class="token operator">?</span> vnode<span class="token punctuation">.</span>elm <span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="createcomponentinstanceforvnode-函数"><a href="#createcomponentinstanceforvnode-函数" class="header-anchor">#</a> createComponentInstanceForVnode 函数</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">createComponentInstanceForVnode</span> <span class="token punctuation">(</span><span class="token parameter">vnode<span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+    _isComponent<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 组件标识</span>
+    _parentVnode<span class="token operator">:</span> vnode<span class="token punctuation">,</span> <span class="token comment">// 占位 vnode</span>
+    parent
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">vnode<span class="token punctuation">.</span>componentOptions<span class="token punctuation">.</span>Ctor</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+  <span class="token comment">// 这里的这个 componentOptions 也就是本篇一开始创建这个组件占位vnode时，出入的那个对象参数 </span>
+  <span class="token comment">// { Ctor, propsData, listeners, tag, children }</span>
+  <span class="token comment">// 其中Ctor 是通过 extend 得到的 Sub(或者叫 VueComponent) 构造器函数</span>
+  <span class="token comment">// 也就是会重新利用这个options得到一个新的组件 vm 实例返回</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="组件的初始化-init"><a href="#组件的初始化-init" class="header-anchor">#</a> 组件的初始化 _init</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// instance/init.js</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">_init</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>options <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>_isComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">initInternalComponent</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">/** 这里是new Vue的合并options **/</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">initInternalComponent</span><span class="token punctuation">(</span><span class="token parameter">vm<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> opts <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>constructor<span class="token punctuation">.</span>options<span class="token punctuation">)</span> <span class="token comment">// 这里就是 Sub 的 options</span>
+  <span class="token keyword">const</span> parentVnode <span class="token operator">=</span> options<span class="token punctuation">.</span>_parentVnode <span class="token comment">// 占位vnode</span>
+  opts<span class="token punctuation">.</span>parent <span class="token operator">=</span> options<span class="token punctuation">.</span>parent <span class="token comment">// 父 vm 实例</span>
+  options<span class="token punctuation">.</span>_parentVnode <span class="token operator">=</span> parentVnode
+  <span class="token operator">...</span>
+  <span class="token comment">// 这里就将 Sub 的options 加到了组件实例的 $options上</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 在创建完组件 vm 实例之后</span>
+<span class="token comment">// 进行实例挂载</span>
+<span class="token comment">// child.$mount(undefined)</span>
+<span class="token comment">// platform/web/runtime/index.js</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$mount</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> hydrating <span class="token comment">/* false */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token keyword">return</span> <span class="token function">mountComponent</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> el<span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span> <span class="token comment">// el = undefined</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// instance/lifecycle.js</span>
+<span class="token keyword">function</span> <span class="token function">mountComponent</span><span class="token punctuation">(</span><span class="token parameter">vm<span class="token punctuation">,</span> el<span class="token punctuation">,</span> hydrating</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// el = undefined</span>
+	<span class="token comment">//  hydrating = false</span>
+  <span class="token comment">// 接下来就是通过之前的流程，创建渲染 Watcher -&gt; updateComponent -&gt; vm._render -&gt; vm._update</span>
+  <span class="token comment">// _render 中调用的 $options.render 是在 vue-loader 解析单文件时候得到的，也可以手写render函数</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="组件的-update-过程"><a href="#组件的-update-过程" class="header-anchor">#</a> 组件的 _update 过程</h3> <p>还是调用<strong>Vue原型上的_update函数</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> prevEl <span class="token operator">=</span> vm<span class="token punctuation">.</span>$el
+<span class="token keyword">const</span> prevVnode <span class="token operator">=</span> vm<span class="token punctuation">.</span>_vnode <span class="token comment">// 实例vm 刚创建出来，没有这个_vnode属性</span>
+<span class="token keyword">const</span> restoreActiveInstance <span class="token operator">=</span> <span class="token function">setActiveInstance</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span> <span class="token comment">// 这里就是存储当前 vm 实例的过程</span>
+vm<span class="token punctuation">.</span>_vnode <span class="token operator">=</span> vnode <span class="token comment">// 实例 vm 的_vnode 属性是当前的 组件实际vnode而非占位vnode</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>prevVnode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  vm<span class="token punctuation">.</span>$el <span class="token operator">=</span> vm<span class="token punctuation">.</span><span class="token function">__patch__</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>$el<span class="token punctuation">,</span> vnode<span class="token punctuation">,</span> hydrating<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token comment">// 通过patch 之后赋值 $el</span>
+<span class="token punctuation">}</span>
+<span class="token operator">...</span>
+<span class="token comment">// 到这里为止其实还没有进行挂载到真实的dom上，因为在child.$mount()传进来的是空</span>
+</code></pre></div><h3 id="回到createcomponent方法中"><a href="#回到createcomponent方法中" class="header-anchor">#</a> 回到createComponent方法中</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/patch.js</span>
+<span class="token keyword">function</span> <span class="token function">createComponent</span> <span class="token punctuation">(</span><span class="token parameter">vnode<span class="token punctuation">,</span> insertedVnodeQueue<span class="token punctuation">,</span> parentElm<span class="token punctuation">,</span> refElm</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> vnode<span class="token punctuation">.</span>data
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> isReactivated <span class="token operator">=</span> <span class="token function">isDef</span><span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>componentInstance<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> i<span class="token punctuation">.</span>keepAlive
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>hook<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>init<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">i</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> <span class="token boolean">false</span> <span class="token comment">/* hydrating */</span><span class="token punctuation">)</span> 
+      <span class="token comment">// 调用hooks中的init钩子</span>
+      <span class="token comment">// 在 vdom/create-component.js中生成占位vnode添加的componentVNodeHooks</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 初始化完之后，对组件进行初始化和插入到DOM</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>componentInstance<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">initComponent</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> insertedVnodeQueue<span class="token punctuation">)</span> <span class="token comment">// vnode.elm = vnode.componentInstance.$el</span>
+      <span class="token function">insert</span><span class="token punctuation">(</span>parentElm<span class="token punctuation">,</span> vnode<span class="token punctuation">.</span>elm<span class="token punctuation">,</span> refElm<span class="token punctuation">)</span> <span class="token comment">// 插入到DOM</span>
+      <span class="token operator">...</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>从根节点开始 -&gt; 通过render生成得到 占位 vnode（<App></App>） -&gt; 通过 占位vnode 的 Ctor 生成其对应的vm 实例（vm.componentInstance）  -&gt;　通过实例下的 render 方法，生成其 渲染vnode（也就是文中的实际 vnode） -&gt;　最后通过initComponent 、insert 等方法插入 组件 到 DOM 节点中</p></blockquote> <p>到这里，就已经将创建出来的 <strong>VueComponent</strong> 插入到对应的 DOM节点中，并且已经关联好对应的 <strong>vm 实例</strong></p> <p>在 <strong>createComponent</strong> 返回 <strong>true</strong> 之后，调用栈回到  <strong>patch</strong> 函数内，返回 <strong>vnode.elm</strong>，最后回到  <strong>vm._update</strong> 内部</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.54f4db6a.js" defer></script><script src="/blog/assets/js/2.e69a48f0.js" defer></script><script src="/blog/assets/js/14.413f9e96.js" defer></script>
+  </body>
+</html>

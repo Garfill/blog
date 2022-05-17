@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>异步组件 | Garfill Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.b6bfb1ac.css" as="style"><link rel="preload" href="/blog/assets/js/app.54f4db6a.js" as="script"><link rel="preload" href="/blog/assets/js/2.e69a48f0.js" as="script"><link rel="preload" href="/blog/assets/js/15.f259f537.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6aefd31d.js"><link rel="prefetch" href="/blog/assets/js/11.533f52c4.js"><link rel="prefetch" href="/blog/assets/js/12.4227b7cb.js"><link rel="prefetch" href="/blog/assets/js/13.b9875199.js"><link rel="prefetch" href="/blog/assets/js/14.413f9e96.js"><link rel="prefetch" href="/blog/assets/js/16.7a0e524b.js"><link rel="prefetch" href="/blog/assets/js/17.7f724a36.js"><link rel="prefetch" href="/blog/assets/js/18.e9c819f7.js"><link rel="prefetch" href="/blog/assets/js/19.076edbb5.js"><link rel="prefetch" href="/blog/assets/js/20.c50a51ee.js"><link rel="prefetch" href="/blog/assets/js/21.fc275f95.js"><link rel="prefetch" href="/blog/assets/js/22.9ebf55a2.js"><link rel="prefetch" href="/blog/assets/js/23.aea94949.js"><link rel="prefetch" href="/blog/assets/js/24.73d9a913.js"><link rel="prefetch" href="/blog/assets/js/25.7198305a.js"><link rel="prefetch" href="/blog/assets/js/26.ee045415.js"><link rel="prefetch" href="/blog/assets/js/27.0d8e93aa.js"><link rel="prefetch" href="/blog/assets/js/28.c2ace0e8.js"><link rel="prefetch" href="/blog/assets/js/29.854a3fd9.js"><link rel="prefetch" href="/blog/assets/js/3.bddad0a2.js"><link rel="prefetch" href="/blog/assets/js/30.cc264c6c.js"><link rel="prefetch" href="/blog/assets/js/31.042666a0.js"><link rel="prefetch" href="/blog/assets/js/32.21c171f2.js"><link rel="prefetch" href="/blog/assets/js/33.9c2367bf.js"><link rel="prefetch" href="/blog/assets/js/34.a89e06e6.js"><link rel="prefetch" href="/blog/assets/js/35.6e94a157.js"><link rel="prefetch" href="/blog/assets/js/36.c02e9046.js"><link rel="prefetch" href="/blog/assets/js/4.b8a1e6a9.js"><link rel="prefetch" href="/blog/assets/js/5.e7e225c8.js"><link rel="prefetch" href="/blog/assets/js/6.163ff0cd.js"><link rel="prefetch" href="/blog/assets/js/7.0d948b14.js"><link rel="prefetch" href="/blog/assets/js/8.30cfb4e0.js"><link rel="prefetch" href="/blog/assets/js/9.d96ecf8f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.b6bfb1ac.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Garfill Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>异步组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Vue/componentInstance/asyncComp/#工厂函数实现异步组件" class="sidebar-link">工厂函数实现异步组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/asyncComp/#分析-vue-component-的实现" class="sidebar-link">分析 Vue.component 的实现</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/asyncComp/#创建异步组件-vnode" class="sidebar-link">创建异步组件 VNode</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/componentInstance/asyncComp/#重新渲染" class="sidebar-link">重新渲染</a></li></ul></li><li><a href="/blog/Vue/componentInstance/asyncComp/#promise实现异步组件" class="sidebar-link">Promise实现异步组件</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="异步组件"><a href="#异步组件" class="header-anchor">#</a> 异步组件</h1> <h2 id="工厂函数实现异步组件"><a href="#工厂函数实现异步组件" class="header-anchor">#</a> 工厂函数实现异步组件</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 示例</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'async-test'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'./components/Test.vue'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> resolve<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 同样扩展到 Vue.options.components</span>
+</code></pre></div><p>工厂函数会<strong>异步解析</strong>组件定义，只有需要渲染时才触发工厂函数，并<strong>缓存结果</strong></p> <h3 id="分析-vue-component-的实现"><a href="#分析-vue-component-的实现" class="header-anchor">#</a> 分析 Vue.component 的实现</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// global-api/assets.js</span>
+Vue<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> definitino</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 这里对于异步组件来说啥都没执行</span>
+  <span class="token comment">// 就只是返回了那个构造函数</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>options<span class="token punctuation">[</span>type <span class="token operator">+</span> <span class="token string">'s'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> definition
+  <span class="token keyword">return</span> definition
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="创建异步组件-vnode"><a href="#创建异步组件-vnode" class="header-anchor">#</a> 创建异步组件 VNode</h3> <p><strong>只有当某个组件中需要进行这个异步组件的渲染，才会进行文件的加载</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vdom/create-component</span>
+<span class="token comment">// 需要这个异步组件的时候， 所包含的 组件渲染vnode 发生变化，重新渲染生成对应 vnode</span>
+<span class="token keyword">function</span> <span class="token function">createComponent</span> <span class="token punctuation">(</span><span class="token parameter">Ctor<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> childrend<span class="token punctuation">,</span> tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> baseCtor <span class="token operator">=</span> context<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>_base <span class="token comment">// Vue</span>
+  <span class="token comment">// 中间这部分为常规组件的Ctor处理</span>
+  <span class="token comment">// Ctor = 传入的构造函数 f(res, rej)</span>
+  <span class="token keyword">let</span> asyncFactory
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isUndef</span><span class="token punctuation">(</span>Ctor<span class="token punctuation">.</span>cid<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    asyncFactory <span class="token operator">=</span> Ctor<span class="token punctuation">;</span>
+    Ctor <span class="token operator">=</span> <span class="token function">resolveAsyncComponent</span><span class="token punctuation">(</span>asyncFactory<span class="token punctuation">,</span> baseCtor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Ctor <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 第一次加载的时候返回的Ctor = undefined</span>
+      <span class="token comment">// 返回注释节点占位渲染</span>
+      <span class="token comment">// 实际渲染函数没有变</span>
+      <span class="token keyword">return</span> <span class="token function">createAsyncPlaceholder</span><span class="token punctuation">(</span>
+        asyncFactory<span class="token punctuation">,</span>
+        data<span class="token punctuation">,</span>
+        context<span class="token punctuation">,</span>
+        children<span class="token punctuation">,</span>
+        tag
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// vdom/helpers/resolve-async-component.js</span>
+<span class="token keyword">function</span> <span class="token function">resolveAsyncComponent</span><span class="token punctuation">(</span><span class="token parameter">factory<span class="token punctuation">,</span> baseCtor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>factory<span class="token punctuation">.</span>resolved<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这是加载之后强制渲染的执行</span>
+    <span class="token comment">// 返回编译好的构造函数作为Ctor来生成组件</span>
+    <span class="token keyword">return</span> factory<span class="token punctuation">.</span>resolved
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 第一次加载</span>
+  <span class="token comment">// factory 就是传入的构造函数</span>
+  <span class="token keyword">const</span> owners <span class="token operator">=</span> factory<span class="token punctuation">.</span>owners <span class="token operator">=</span> <span class="token punctuation">[</span>owner<span class="token punctuation">]</span> <span class="token comment">// 当前异步组件所在的实例vm</span>
+  <span class="token keyword">let</span> sync <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	owner<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'hook:destroyed'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">remove</span><span class="token punctuation">(</span>owners<span class="token punctuation">,</span> owner<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">forceRender</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">renderCompleted</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> l <span class="token operator">=</span> owners<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      owners<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">$forceUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 强制渲染，因为可能在这过程中vm 的数据发生变化</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> 
+  
+  <span class="token keyword">const</span> resolve <span class="token operator">=</span> <span class="token function">once</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 加载后的回调</span>
+    <span class="token comment">// 就是Vue.extend返回的构造函数</span>
+    <span class="token comment">// 构造函数缓存到工厂函数中，不用每次加载都来一次</span>
+    factory<span class="token punctuation">.</span>resolved <span class="token operator">=</span> <span class="token function">ensureCtor</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> baseCtor<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>sync<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 加载后强制渲染一次</span>
+      <span class="token function">forceRender</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      owners<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> reject <span class="token operator">=</span> <span class="token function">once</span><span class="token punctuation">(</span><span class="token parameter">reason</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+  <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token function">factory</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token comment">// 执行加载文件的逻辑</span>
+  <span class="token comment">// 如果异步组件的文件加载是个异步的过程，那么会先执行完当前代码</span>
+  sync <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">return</span> factory<span class="token punctuation">.</span>loading
+    <span class="token operator">?</span> factory<span class="token punctuation">.</span>loadingComp
+  <span class="token operator">:</span> factory<span class="token punctuation">.</span>resolved
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createAsyncPlaceholder</span> <span class="token punctuation">(</span><span class="token parameter">factory<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> children<span class="token punctuation">,</span> tag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> node <span class="token operator">=</span> <span class="token function">createEmptyVNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  node<span class="token punctuation">.</span>asyncFactory <span class="token operator">=</span> factory<span class="token punctuation">;</span>
+  node<span class="token punctuation">.</span>asyncMeta <span class="token operator">=</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> context<span class="token punctuation">,</span> children<span class="token punctuation">,</span> tag <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> node
+  <span class="token comment">// 创造一个空vnode返回，这个vnode会被浏览器解释成一个注释节点(&lt;!----&gt;)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="重新渲染"><a href="#重新渲染" class="header-anchor">#</a> 重新渲染</h3> <p>重新渲染的时候，会重新走一次vnode的渲染</p> <h2 id="promise实现异步组件"><a href="#promise实现异步组件" class="header-anchor">#</a> Promise实现异步组件</h2> <div class="language-js extra-class"><pre class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'async-comp'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'path/to/async/comp'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>加载的顺序和之前工厂函数的类似</p> <p>不同地方在于</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">resolveAsyncComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token function">factory</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token comment">// import在webpack中返回一个promise</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isObject</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPromise</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isUndef</span><span class="token punctuation">(</span>factory<span class="token punctuation">.</span>resolved<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 之后与工厂函数一样，第一次返回undefined，加载之后执行resolve ，再执行强制渲染</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.54f4db6a.js" defer></script><script src="/blog/assets/js/2.e69a48f0.js" defer></script><script src="/blog/assets/js/15.f259f537.js" defer></script>
+  </body>
+</html>

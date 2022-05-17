@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>编译入口 | Garfill Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.b6bfb1ac.css" as="style"><link rel="preload" href="/blog/assets/js/app.54f4db6a.js" as="script"><link rel="preload" href="/blog/assets/js/2.e69a48f0.js" as="script"><link rel="preload" href="/blog/assets/js/9.d96ecf8f.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6aefd31d.js"><link rel="prefetch" href="/blog/assets/js/11.533f52c4.js"><link rel="prefetch" href="/blog/assets/js/12.4227b7cb.js"><link rel="prefetch" href="/blog/assets/js/13.b9875199.js"><link rel="prefetch" href="/blog/assets/js/14.413f9e96.js"><link rel="prefetch" href="/blog/assets/js/15.f259f537.js"><link rel="prefetch" href="/blog/assets/js/16.7a0e524b.js"><link rel="prefetch" href="/blog/assets/js/17.7f724a36.js"><link rel="prefetch" href="/blog/assets/js/18.e9c819f7.js"><link rel="prefetch" href="/blog/assets/js/19.076edbb5.js"><link rel="prefetch" href="/blog/assets/js/20.c50a51ee.js"><link rel="prefetch" href="/blog/assets/js/21.fc275f95.js"><link rel="prefetch" href="/blog/assets/js/22.9ebf55a2.js"><link rel="prefetch" href="/blog/assets/js/23.aea94949.js"><link rel="prefetch" href="/blog/assets/js/24.73d9a913.js"><link rel="prefetch" href="/blog/assets/js/25.7198305a.js"><link rel="prefetch" href="/blog/assets/js/26.ee045415.js"><link rel="prefetch" href="/blog/assets/js/27.0d8e93aa.js"><link rel="prefetch" href="/blog/assets/js/28.c2ace0e8.js"><link rel="prefetch" href="/blog/assets/js/29.854a3fd9.js"><link rel="prefetch" href="/blog/assets/js/3.bddad0a2.js"><link rel="prefetch" href="/blog/assets/js/30.cc264c6c.js"><link rel="prefetch" href="/blog/assets/js/31.042666a0.js"><link rel="prefetch" href="/blog/assets/js/32.21c171f2.js"><link rel="prefetch" href="/blog/assets/js/33.9c2367bf.js"><link rel="prefetch" href="/blog/assets/js/34.a89e06e6.js"><link rel="prefetch" href="/blog/assets/js/35.6e94a157.js"><link rel="prefetch" href="/blog/assets/js/36.c02e9046.js"><link rel="prefetch" href="/blog/assets/js/4.b8a1e6a9.js"><link rel="prefetch" href="/blog/assets/js/5.e7e225c8.js"><link rel="prefetch" href="/blog/assets/js/6.163ff0cd.js"><link rel="prefetch" href="/blog/assets/js/7.0d948b14.js"><link rel="prefetch" href="/blog/assets/js/8.30cfb4e0.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.b6bfb1ac.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Garfill Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>编译入口</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Vue/compile/1/#compiletofunctions-函数" class="sidebar-link">compileToFunctions 函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/compile/1/#createcompiler-函数" class="sidebar-link">createCompiler 函数</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/compile/1/#createcompilercreator" class="sidebar-link">createCompilerCreator</a></li></ul></li><li><a href="/blog/Vue/compile/1/#createcompiletofunctionfn" class="sidebar-link">createCompileToFunctionFn</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="编译入口"><a href="#编译入口" class="header-anchor">#</a> 编译入口</h1> <p>在日常开发中，会通过 <strong>vue-loader</strong> 将<strong>vue模板文件里的template编译成render</strong> 函数</p> <p>在之前的组件初始化过程可以知道：</p> <blockquote><p>在组件初始化过程中，当调用$mount方法时会通过mountComponent函数，调用 vm实例的_render 方法，生成vnode，最后传给 vm._update 方法进行挂载</p></blockquote> <p>而在附带了Compiler的版本中，则会先通过编译，<strong>将模板部分HTML编译成对应的render函数</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platform/web/entry-runtime-with-compiler.js</span>
+<span class="token keyword">const</span> mount <span class="token operator">=</span> <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$mount <span class="token comment">// 缓存原有方法</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$mount</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> hydrating</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// hydrating === false</span>
+  <span class="token comment">/// 省略部分代码</span>
+  <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>options
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>options<span class="token punctuation">.</span>render<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> template <span class="token operator">=</span> options<span class="token punctuation">.</span>template
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>template<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> template <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>template<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'#'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// template: '#app'</span>
+          template <span class="token operator">=</span> <span class="token function">idToTemplate</span><span class="token punctuation">(</span>template<span class="token punctuation">)</span> <span class="token comment">// 模板内部字符串innerHTML</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>template<span class="token punctuation">.</span>nodeType<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// template传入的html节点实例</span>
+        template <span class="token operator">=</span> template<span class="token punctuation">.</span>innerHTML
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 无效template</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// el.outerHTML或者el的复制</span>
+      template <span class="token operator">=</span> <span class="token function">getOuterHTML</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>template<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 当通过上述方法获得template，注意这里的template是 !!! String类型 !!!</span>
+       <span class="token comment">// 编译相关，编译成 render函数和 静态render函数</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> render<span class="token punctuation">,</span> staticRenderFns <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">compileToFunctions</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> <span class="token punctuation">{</span> 
+        <span class="token comment">// 编译入口：src/compiler/to-function.js</span>
+        outputSourceRange<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
+        shouldDecodeNewlines<span class="token punctuation">,</span>
+        shouldDecodeNewlinesForHref<span class="token punctuation">,</span>
+        delimiters<span class="token operator">:</span> options<span class="token punctuation">.</span>delimiters<span class="token punctuation">,</span>
+        comments<span class="token operator">:</span> options<span class="token punctuation">.</span>comments
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+      options<span class="token punctuation">.</span>render <span class="token operator">=</span> render
+      options<span class="token punctuation">.</span>staticRenderFns <span class="token operator">=</span> staticRenderFns
+
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">mount</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> el<span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>小结：当实例化过程中没有定义options.render函数时则通过template来编译得到对应的render函数</p></blockquote> <h2 id="compiletofunctions-函数"><a href="#compiletofunctions-函数" class="header-anchor">#</a> compileToFunctions 函数</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platforms/web/compiler/index.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> baseOptions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./options'</span> <span class="token comment">// 平台相关的选项和函数</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createCompiler <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'compiler/index'</span> <span class="token comment">// src/compiler/index</span>
+<span class="token comment">// 返回的compileToFunctions就是我们调用的编译函数</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> compile<span class="token punctuation">,</span> compileToFunctions <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createCompiler</span><span class="token punctuation">(</span>baseOptions<span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> compile<span class="token punctuation">,</span> compileToFunctions <span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="createcompiler-函数"><a href="#createcompiler-函数" class="header-anchor">#</a> createCompiler 函数</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// compiler/index.js</span>
+<span class="token keyword">const</span> createCompiler <span class="token operator">=</span> <span class="token function">createCompilerCreator</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">baseCompile</span><span class="token punctuation">(</span><span class="token parameter">template<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 这里是编译最重要的部分</span>
+  <span class="token comment">// 将template字符串传入解析，生成ast（抽象语法数）</span>
+  <span class="token comment">// ast进行优化</span>
+  <span class="token comment">// 通过ast生成render函数的代码</span>
+  <span class="token keyword">const</span> ast <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>optimize <span class="token operator">!==</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">optimize</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> code <span class="token operator">=</span> <span class="token function">generate</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    ast<span class="token punctuation">,</span>
+    render<span class="token operator">:</span> code<span class="token punctuation">.</span>render<span class="token punctuation">,</span>
+    staticRenerFns<span class="token operator">:</span> code<span class="token punctuation">.</span>staticRenderFns<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><p>小结：createCompiler 由 createCompilerCreator 函数调用返回，这个函数接受<strong>基本编译器流程函数</strong>的参数</p></blockquote> <h3 id="createcompilercreator"><a href="#createcompilercreator" class="header-anchor">#</a> createCompilerCreator</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// compiler/create-compiler.js</span>
+<span class="token keyword">function</span> <span class="token function">createCompilerCreator</span><span class="token punctuation">(</span><span class="token parameter">baseCompile</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">createCompiler</span> <span class="token punctuation">(</span><span class="token parameter">baseOptions</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这里就是最终调用的compileToFunctions</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      compile<span class="token punctuation">,</span>
+      compileToFunctions<span class="token operator">:</span> <span class="token function">createCompileToFunctionFn</span><span class="token punctuation">(</span>compile<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h1 id="最终编译入口位置"><a href="#最终编译入口位置" class="header-anchor">#</a> 最终编译入口位置</h1> <h2 id="createcompiletofunctionfn"><a href="#createcompiletofunctionfn" class="header-anchor">#</a> createCompileToFunctionFn</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// compiler/to-function.js</span>
+<span class="token keyword">function</span> <span class="token function">createCompileToFunctionFn</span><span class="token punctuation">(</span><span class="token parameter">compile</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> cache <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token comment">// 最终的编译入口</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">compileToFunctions</span><span class="token punctuation">(</span><span class="token parameter">template<span class="token punctuation">,</span> options<span class="token punctuation">,</span> vm</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    options <span class="token operator">=</span> <span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> warn <span class="token operator">=</span> options<span class="token punctuation">.</span>warn <span class="token operator">||</span> baseWarn
+    <span class="token keyword">delete</span> options<span class="token punctuation">.</span>warn<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">'return 1'</span><span class="token punctuation">)</span> 
+        <span class="token comment">// 非生产环境测试Function生成器</span>
+        <span class="token comment">// 传入的template是字符串的</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">const</span> key <span class="token operator">=</span> options<span class="token punctuation">.</span>delimiters <span class="token operator">?</span> <span class="token function">String</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>delimiters<span class="token punctuation">)</span> <span class="token operator">+</span> template <span class="token operator">:</span> template
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token comment">// 缓存命中</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// !!! 编译过程，将传入的template字符串转化的过程</span>
+    <span class="token keyword">const</span> compiled <span class="token operator">=</span> <span class="token function">compile</span><span class="token punctuation">(</span>template<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+    <span class="token comment">// 省略一些检错代码</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">const</span> fnGenErrors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment">// compiled.render 是字符串，通过 new Function() 转为函数</span>
+    res<span class="token punctuation">.</span>render <span class="token operator">=</span> <span class="token function">createFunction</span><span class="token punctuation">(</span>compiled<span class="token punctuation">.</span>render<span class="token punctuation">,</span> fnGenErrors<span class="token punctuation">)</span>
+    res<span class="token punctuation">.</span>staticRenderFns <span class="token operator">=</span> compiled<span class="token punctuation">.</span>staticRenderFns<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">code</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">createFunction</span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> fnGenErrors<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>cache<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> res<span class="token punctuation">)</span> <span class="token comment">// 缓存并返回</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createFunction</span> <span class="token punctuation">(</span><span class="token parameter">code<span class="token punctuation">,</span> errors</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    errors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> err<span class="token punctuation">,</span> code <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> noop
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.54f4db6a.js" defer></script><script src="/blog/assets/js/2.e69a48f0.js" defer></script><script src="/blog/assets/js/9.d96ecf8f.js" defer></script>
+  </body>
+</html>

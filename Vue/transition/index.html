@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>transition | Garfill Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.b6bfb1ac.css" as="style"><link rel="preload" href="/blog/assets/js/app.54f4db6a.js" as="script"><link rel="preload" href="/blog/assets/js/2.e69a48f0.js" as="script"><link rel="preload" href="/blog/assets/js/33.9c2367bf.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6aefd31d.js"><link rel="prefetch" href="/blog/assets/js/11.533f52c4.js"><link rel="prefetch" href="/blog/assets/js/12.4227b7cb.js"><link rel="prefetch" href="/blog/assets/js/13.b9875199.js"><link rel="prefetch" href="/blog/assets/js/14.413f9e96.js"><link rel="prefetch" href="/blog/assets/js/15.f259f537.js"><link rel="prefetch" href="/blog/assets/js/16.7a0e524b.js"><link rel="prefetch" href="/blog/assets/js/17.7f724a36.js"><link rel="prefetch" href="/blog/assets/js/18.e9c819f7.js"><link rel="prefetch" href="/blog/assets/js/19.076edbb5.js"><link rel="prefetch" href="/blog/assets/js/20.c50a51ee.js"><link rel="prefetch" href="/blog/assets/js/21.fc275f95.js"><link rel="prefetch" href="/blog/assets/js/22.9ebf55a2.js"><link rel="prefetch" href="/blog/assets/js/23.aea94949.js"><link rel="prefetch" href="/blog/assets/js/24.73d9a913.js"><link rel="prefetch" href="/blog/assets/js/25.7198305a.js"><link rel="prefetch" href="/blog/assets/js/26.ee045415.js"><link rel="prefetch" href="/blog/assets/js/27.0d8e93aa.js"><link rel="prefetch" href="/blog/assets/js/28.c2ace0e8.js"><link rel="prefetch" href="/blog/assets/js/29.854a3fd9.js"><link rel="prefetch" href="/blog/assets/js/3.bddad0a2.js"><link rel="prefetch" href="/blog/assets/js/30.cc264c6c.js"><link rel="prefetch" href="/blog/assets/js/31.042666a0.js"><link rel="prefetch" href="/blog/assets/js/32.21c171f2.js"><link rel="prefetch" href="/blog/assets/js/34.a89e06e6.js"><link rel="prefetch" href="/blog/assets/js/35.6e94a157.js"><link rel="prefetch" href="/blog/assets/js/36.c02e9046.js"><link rel="prefetch" href="/blog/assets/js/4.b8a1e6a9.js"><link rel="prefetch" href="/blog/assets/js/5.e7e225c8.js"><link rel="prefetch" href="/blog/assets/js/6.163ff0cd.js"><link rel="prefetch" href="/blog/assets/js/7.0d948b14.js"><link rel="prefetch" href="/blog/assets/js/8.30cfb4e0.js"><link rel="prefetch" href="/blog/assets/js/9.d96ecf8f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.b6bfb1ac.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Garfill Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>transition</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Vue/transition/#定义" class="sidebar-link">定义</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/Vue/transition/#动画控制" class="sidebar-link">动画控制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/transition/#动画逻辑实现" class="sidebar-link">动画逻辑实现</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/transition/#具体enter实现" class="sidebar-link">具体enter实现</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="transition"><a href="#transition" class="header-anchor">#</a> transition</h1> <p>transition 组件，用于执行元素显示或者隐藏过程的过渡动画
+transition 组件与平台相关，<strong>不同平台实现不同</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platforms/web/runtime/index.js</span>
+<span class="token comment">// 扩展到components组件上，与keep-alive类似，在组件初始化会合并入组件选项</span>
+<span class="token function">extend</span><span class="token punctuation">(</span>Vue<span class="token punctuation">.</span>options<span class="token punctuation">.</span>components<span class="token punctuation">,</span> platformComponents<span class="token punctuation">)</span>
+</code></pre></div><h2 id="定义"><a href="#定义" class="header-anchor">#</a> 定义</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platforms/web/runtime/components/transition.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'transition'</span><span class="token punctuation">,</span>
+  abstract<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 同样是抽象组件，与keep-alive一样，实际自身不添加dom</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> children <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$slots<span class="token punctuation">.</span>default
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 内部的节点不能是纯文本节点</span>
+    children <span class="token operator">=</span> children<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isNotTextNode<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>children<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// transition组件只能有一个子节点，多个则报错提示改用transition-group</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">const</span> mode <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>mode
+    <span class="token comment">// mode 只支持 in-out/out-in</span>
+    <span class="token keyword">const</span> rawChild <span class="token operator">=</span> children<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hasParentTransition</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$vnode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// this.$vnode是组件占位vnode &lt;transition /&gt;</span>
+      <span class="token comment">// 如果外层 &lt;transition /&gt; 是根节点</span>
+      <span class="token comment">// 直接返回子节点vnode</span>
+      <span class="token keyword">return</span> rawChild
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> child <span class="token operator">=</span> <span class="token function">getRealChild</span><span class="token punctuation">(</span>rawChild<span class="token punctuation">)</span>
+    <span class="token comment">// 如果过渡组件是abstract组件，递归寻找其内部非抽象组件</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 一般child为过渡组件vnode !== false</span>
+        <span class="token keyword">return</span> rawChild
+    <span class="token punctuation">}</span>
+    <span class="token comment">// ...</span>
+    <span class="token comment">// 生成组件id和过渡元素的key</span>
+    <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">__transition-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>_uid<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token template-punctuation string">`</span></span>
+    child<span class="token punctuation">.</span>key <span class="token operator">=</span> child<span class="token punctuation">.</span>key <span class="token operator">==</span> <span class="token keyword">null</span>
+          <span class="token operator">?</span> child<span class="token punctuation">.</span>isComment
+            <span class="token operator">?</span> id <span class="token operator">+</span> <span class="token string">'comment'</span>
+            <span class="token operator">:</span> id <span class="token operator">+</span> child<span class="token punctuation">.</span>tag
+          <span class="token operator">:</span> <span class="token function">isPrimitive</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+            <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token function">String</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> child<span class="token punctuation">.</span>key <span class="token operator">:</span> id <span class="token operator">+</span> child<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+            <span class="token operator">:</span> child<span class="token punctuation">.</span>key
+    
+    <span class="token comment">// 将transition的相关属性赋值到子组件</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>data <span class="token operator">||</span> <span class="token punctuation">(</span>child<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>transtion <span class="token operator">=</span> <span class="token function">extractTransition</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> oldRawChild <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_vnode
+    <span class="token keyword">const</span> oldChild <span class="token operator">=</span> <span class="token function">getRealChild</span><span class="token punctuation">(</span>oldRawChild<span class="token punctuation">)</span>
+    <span class="token comment">// 这里就是找到 渲染前的 内部非抽象元素/组件</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>oldChild <span class="token operator">&amp;&amp;</span> oldChild<span class="token punctuation">.</span>data 
+        <span class="token operator">&amp;&amp;</span> <span class="token function">isSameChild</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> oldChild<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isAsyncPlaceholder</span><span class="token punctuation">(</span>oldChild<span class="token punctuation">)</span>
+        <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>oldChild<span class="token punctuation">.</span>componentInstance <span class="token operator">&amp;&amp;</span> oldChild<span class="token punctuation">.</span>componentInstance<span class="token punctuation">.</span>_vnode<span class="token punctuation">.</span>isComment<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> oldData <span class="token operator">=</span> oldChild<span class="token punctuation">.</span>data<span class="token punctuation">.</span>transition <span class="token operator">=</span> <span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>mode <span class="token operator">===</span> <span class="token string">'out-in'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>_leaving <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">// 标识正在隐藏</span>
+          <span class="token function">mergeVNodeHook</span><span class="token punctuation">(</span>oldData<span class="token punctuation">,</span> <span class="token string">'afterLeave'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 旧元素隐藏之后的回调</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>_leaving <span class="token operator">=</span> <span class="token boolean">false</span>
+            <span class="token comment">// 重新解析transition子组件更新</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$forceUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>mode <span class="token operator">===</span> <span class="token string">'in-out'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAsyncPlaceholder</span><span class="token punctuation">(</span>child<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token keyword">return</span> oldRawChild
+            <span class="token punctuation">}</span>
+            <span class="token keyword">let</span> delayedLeave
+            <span class="token keyword">const</span> <span class="token function-variable function">performLeave</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token function">delayedLeave</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+            <span class="token function">mergeVNodeHook</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'afterEnter'</span><span class="token punctuation">,</span> performLeave<span class="token punctuation">)</span>
+            <span class="token function">mergeVNodeHook</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'enterCancelled'</span><span class="token punctuation">,</span> performLeave<span class="token punctuation">)</span>
+            <span class="token function">mergeVNodeHook</span><span class="token punctuation">(</span>oldData<span class="token punctuation">,</span> <span class="token string">'delayLeave'</span><span class="token punctuation">,</span> <span class="token parameter">leave</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> delayedLeave <span class="token operator">=</span> leave <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 最终渲染的还是子节点，本质是slot</span>
+    <span class="token keyword">return</span> rawChild
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 将transition组件的属性赋值给子组件</span>
+<span class="token keyword">function</span> <span class="token function">extractTransitionData</span> <span class="token punctuation">(</span><span class="token parameter">comp<span class="token operator">:</span> Component</span><span class="token punctuation">)</span><span class="token operator">:</span> Object <span class="token punctuation">{</span>
+  <span class="token comment">// comp 是 transition的vm实例</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">const</span> options <span class="token operator">=</span> comp<span class="token punctuation">.</span>$options
+  <span class="token comment">// props</span>
+  <span class="token comment">// 转移transition的props</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> options<span class="token punctuation">.</span>propsData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> comp<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// events</span>
+  <span class="token comment">// 转移事件处理函数</span>
+  <span class="token keyword">const</span> listeners <span class="token operator">=</span> options<span class="token punctuation">.</span>_parentListeners
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> listeners<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data<span class="token punctuation">[</span><span class="token function">camelize</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> listeners<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> data
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>小结：render函数内，只是定义了transition组件内的渲染逻辑，还没有加入过渡动画的逻辑</p></blockquote> <h2 id="动画控制"><a href="#动画控制" class="header-anchor">#</a> 动画控制</h2> <p>transition组件，通过<strong>添加和删除css类名</strong>，从而控制元素动画过渡效果
+主要是通过扩展在transition的<strong>钩子函数</strong>实现</p> <h3 id="动画逻辑实现"><a href="#动画逻辑实现" class="header-anchor">#</a> 动画逻辑实现</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platforms/web/modules/transition.js</span>
+<span class="token keyword">function</span> <span class="token function">_enter</span> <span class="token punctuation">(</span><span class="token parameter">_<span class="token operator">:</span> any<span class="token punctuation">,</span> vnode<span class="token operator">:</span> VNodeWithData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>show <span class="token operator">!==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 不是用v-show控制</span>
+    <span class="token comment">// 最终调用enter函数</span>
+    <span class="token function">enter</span><span class="token punctuation">(</span>vnode<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> inBrowser <span class="token operator">?</span> <span class="token punctuation">{</span>
+  <span class="token comment">// create和activate钩子会在创建patch函数的时候注入到baseCompileOption选项中</span>
+  <span class="token comment">// patchvnode的时候会触发对应钩子</span>
+  create<span class="token operator">:</span> _enter<span class="token punctuation">,</span>
+  activate<span class="token operator">:</span> _enter<span class="token punctuation">,</span>
+  <span class="token function">remove</span> <span class="token punctuation">(</span><span class="token parameter">vnode<span class="token operator">:</span> VNode<span class="token punctuation">,</span> rm<span class="token operator">:</span> Function</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>show <span class="token operator">!==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">leave</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> rm<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">rm</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><h3 id="具体enter实现"><a href="#具体enter实现" class="header-anchor">#</a> 具体enter实现</h3> <p>由上面可以看出，enter参数是<strong>过渡元素/组件的vnode</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platforms/web/runtime/modules/transition.js</span>
+<span class="token keyword">function</span> <span class="token function">enter</span><span class="token punctuation">(</span>vnode<span class="token punctuation">,</span> toggleDisplay<span class="token comment">/*这是个函数*/</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> el <span class="token operator">=</span> vnode<span class="token punctuation">.</span>elm <span class="token comment">// el是通过vnode.elm获取，所以就算是组件也可以过渡</span>
+  <span class="token comment">//...</span>
+  <span class="token comment">// 解析出之前赋值给vnode 的transition数据</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token function">resolveTransition</span><span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>transition<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isUndef</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">}</span>
+  <span class="token comment">//...</span>
+  <span class="token comment">// 解析data各项</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>
+    css<span class="token punctuation">,</span>
+    type<span class="token punctuation">,</span>
+    enterClass<span class="token punctuation">,</span>
+    enterToClass<span class="token punctuation">,</span>
+    enterActiveClass<span class="token punctuation">,</span>
+    appearClass<span class="token punctuation">,</span>
+    appearToClass<span class="token punctuation">,</span>
+    appearActiveClass<span class="token punctuation">,</span>
+    beforeEnter<span class="token punctuation">,</span>
+    enter<span class="token punctuation">,</span>
+    afterEnter<span class="token punctuation">,</span>
+    enterCancelled<span class="token punctuation">,</span>
+    beforeAppear<span class="token punctuation">,</span>
+    appear<span class="token punctuation">,</span>
+    afterAppear<span class="token punctuation">,</span>
+    appearCancelled<span class="token punctuation">,</span>
+    duration
+  <span class="token punctuation">}</span> <span class="token operator">=</span> data
+  <span class="token comment">// context 是transition的vm</span>
+  <span class="token keyword">let</span> context <span class="token operator">=</span> activeInstance
+  <span class="token keyword">let</span> transitionNode <span class="token operator">=</span> activeInstance<span class="token punctuation">.</span>$vnode <span class="token comment">// &lt;transition /&gt;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>transition <span class="token operator">&amp;&amp;</span> transition<span class="token punctuation">.</span>parent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// transition在根节点</span>
+    transitionNode <span class="token operator">=</span> transitionNode<span class="token punctuation">.</span>parent
+    context <span class="token operator">=</span> transitionNode<span class="token punctuation">.</span>context
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 一通操作下来，transitionNode就是 &lt;transition&gt; ，context就是transition范围最外层的vm</span>
+  <span class="token keyword">const</span> isAppear <span class="token operator">=</span> <span class="token operator">!</span>context<span class="token punctuation">.</span>_isMounted <span class="token operator">||</span> <span class="token operator">!</span>vnode<span class="token punctuation">.</span>isRootInsert
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isAppear <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>appear <span class="token operator">&amp;&amp;</span> appear <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果不设置appear属性，首次就不执行过渡效果</span>
+   <span class="token keyword">return</span> 
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> startClass <span class="token operator">=</span> isAppear <span class="token operator">&amp;&amp;</span> appearClass <span class="token operator">?</span> appearClass <span class="token operator">:</span> enterClass
+  <span class="token comment">// ... 同样的方法得到activeClass、toClass还有那些钩子函数</span>
+  <span class="token keyword">const</span> expectCSS <span class="token operator">=</span> css <span class="token operator">!==</span> <span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> isIE9
+  <span class="token comment">// 这是用于移除过渡类名的回调函数</span>
+  <span class="token keyword">const</span> cb <span class="token operator">=</span> el<span class="token punctuation">.</span>_enterCb <span class="token operator">=</span> <span class="token function">once</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>expectsCSS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 移除类名</span>
+      <span class="token function">removeTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> toClass<span class="token punctuation">)</span>
+      <span class="token function">removeTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> activeClass<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 如果有设置回调钩子的话</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cb<span class="token punctuation">.</span>cancelled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>expectsCSS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">removeTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> startClass<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      enterCancelledHook <span class="token operator">&amp;&amp;</span> <span class="token function">enterCancelledHook</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      afterEnterHook <span class="token operator">&amp;&amp;</span> <span class="token function">afterEnterHook</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    el<span class="token punctuation">.</span>_enterCb <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// ...</span>
+  <span class="token comment">// 过渡逻辑核心</span>
+  beforeEnterHook <span class="token operator">&amp;&amp;</span> <span class="token function">beforeEnterHook</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>expectsCSS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 添加 v-enter、v-enter-active</span>
+    <span class="token function">addTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> startClass<span class="token punctuation">)</span>
+    <span class="token function">addTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> activeClass<span class="token punctuation">)</span>
+    <span class="token comment">// 就是window.requestNextFrame</span>
+    <span class="token function">nextFrame</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 移除v-enter</span>
+      <span class="token function">removeTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> startClass<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>cb<span class="token punctuation">.</span>cancelled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 添加v-enter-to</span>
+        <span class="token function">addTransitionClass</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> toClass<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>userWantsControl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isValidDuration</span><span class="token punctuation">(</span>explicitEnterDuration<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">setTimeout</span><span class="token punctuation">(</span>cb<span class="token punctuation">,</span> explicitEnterDuration<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 动画结束时候的移除类名操作，注意这里的cb就是上面定义的 cb回调函数</span>
+            <span class="token function">whenTransitionEnds</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> type<span class="token punctuation">,</span> cb<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>vnode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>show<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// v-show处理</span>
+    toggleDisplay <span class="token operator">&amp;&amp;</span> <span class="token function">toggleDisplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    enterHook <span class="token operator">&amp;&amp;</span> <span class="token function">enterHook</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> cb<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="whentransitionends-实现"><a href="#whentransitionends-实现" class="header-anchor">#</a> whenTransitionEnds 实现</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// platforms/web/runtime/transition-util.js</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">whenTransitionEnds</span> <span class="token punctuation">(</span>
+  <span class="token parameter">el<span class="token operator">:</span> Element<span class="token punctuation">,</span>
+  expectedType<span class="token operator">:</span> <span class="token operator">?</span>string<span class="token punctuation">,</span>
+  cb<span class="token operator">:</span> Function</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> type<span class="token punctuation">,</span> timeout<span class="token punctuation">,</span> propCount <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">getTransitionInfo</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> expectedType<span class="token punctuation">)</span>
+  <span class="token comment">// 其实就是获取到过渡属性的各项信息 window.getComputedStyle</span>
+  <span class="token comment">// 比如过渡类系（transition/animation），过渡css属性个数，过渡时间等</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>type<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 动画结束事件</span>
+  <span class="token keyword">const</span> event <span class="token operator">=</span> type <span class="token operator">===</span> <span class="token constant">TRANSITION</span> <span class="token operator">?</span> transitionEndEvent <span class="token operator">:</span> animationEndEvent
+  <span class="token keyword">let</span> ended <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">end</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当所有css元素属性过渡完，移除监听器</span>
+    el<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> onEnd<span class="token punctuation">)</span>
+    <span class="token comment">// 同时cb回调，移除active类名和to类名</span>
+    <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">onEnd</span> <span class="token operator">=</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>target <span class="token operator">===</span> el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 当全部过渡元素css属性完成过渡</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">++</span>ended <span class="token operator">&gt;=</span> propCount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 定时器，就算过渡元素属性个数还没完全过渡完，也强制执行</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ended <span class="token operator">&lt;</span> propCount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> timeout <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token comment">// 监听过渡动画结束事件，执行onEnd</span>
+  el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> onEnd<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><blockquote><p>隐藏的动画（leave）执行逻辑也和enter类似</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.54f4db6a.js" defer></script><script src="/blog/assets/js/2.e69a48f0.js" defer></script><script src="/blog/assets/js/33.9c2367bf.js" defer></script>
+  </body>
+</html>

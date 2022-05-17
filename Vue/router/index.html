@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue-router | Garfill Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.b6bfb1ac.css" as="style"><link rel="preload" href="/blog/assets/js/app.54f4db6a.js" as="script"><link rel="preload" href="/blog/assets/js/2.e69a48f0.js" as="script"><link rel="preload" href="/blog/assets/js/31.042666a0.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6aefd31d.js"><link rel="prefetch" href="/blog/assets/js/11.533f52c4.js"><link rel="prefetch" href="/blog/assets/js/12.4227b7cb.js"><link rel="prefetch" href="/blog/assets/js/13.b9875199.js"><link rel="prefetch" href="/blog/assets/js/14.413f9e96.js"><link rel="prefetch" href="/blog/assets/js/15.f259f537.js"><link rel="prefetch" href="/blog/assets/js/16.7a0e524b.js"><link rel="prefetch" href="/blog/assets/js/17.7f724a36.js"><link rel="prefetch" href="/blog/assets/js/18.e9c819f7.js"><link rel="prefetch" href="/blog/assets/js/19.076edbb5.js"><link rel="prefetch" href="/blog/assets/js/20.c50a51ee.js"><link rel="prefetch" href="/blog/assets/js/21.fc275f95.js"><link rel="prefetch" href="/blog/assets/js/22.9ebf55a2.js"><link rel="prefetch" href="/blog/assets/js/23.aea94949.js"><link rel="prefetch" href="/blog/assets/js/24.73d9a913.js"><link rel="prefetch" href="/blog/assets/js/25.7198305a.js"><link rel="prefetch" href="/blog/assets/js/26.ee045415.js"><link rel="prefetch" href="/blog/assets/js/27.0d8e93aa.js"><link rel="prefetch" href="/blog/assets/js/28.c2ace0e8.js"><link rel="prefetch" href="/blog/assets/js/29.854a3fd9.js"><link rel="prefetch" href="/blog/assets/js/3.bddad0a2.js"><link rel="prefetch" href="/blog/assets/js/30.cc264c6c.js"><link rel="prefetch" href="/blog/assets/js/32.21c171f2.js"><link rel="prefetch" href="/blog/assets/js/33.9c2367bf.js"><link rel="prefetch" href="/blog/assets/js/34.a89e06e6.js"><link rel="prefetch" href="/blog/assets/js/35.6e94a157.js"><link rel="prefetch" href="/blog/assets/js/36.c02e9046.js"><link rel="prefetch" href="/blog/assets/js/4.b8a1e6a9.js"><link rel="prefetch" href="/blog/assets/js/5.e7e225c8.js"><link rel="prefetch" href="/blog/assets/js/6.163ff0cd.js"><link rel="prefetch" href="/blog/assets/js/7.0d948b14.js"><link rel="prefetch" href="/blog/assets/js/8.30cfb4e0.js"><link rel="prefetch" href="/blog/assets/js/9.d96ecf8f.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.b6bfb1ac.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Garfill Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vue-router</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/Vue/router/#vue-use实现" class="sidebar-link">Vue.use实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#toarray-实现" class="sidebar-link">toArray 实现</a></li></ul></li><li><a href="/blog/Vue/router/#router-的具体入口" class="sidebar-link">router 的具体入口</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/Vue/router/#init" class="sidebar-link">init</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#transitionto" class="sidebar-link">transitionTo</a></li></ul></li><li><a href="/blog/Vue/router/#初始化路由对象" class="sidebar-link">初始化路由对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#supportspushstate" class="sidebar-link">supportsPushState</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#matcher" class="sidebar-link">matcher</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#createroutemap" class="sidebar-link">createRouteMap</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#match-方法" class="sidebar-link">match 方法</a></li></ul></li><li><a href="/blog/Vue/router/#路径切换" class="sidebar-link">路径切换</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#resolvequeue" class="sidebar-link">resolveQueue</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#runqueue" class="sidebar-link">runQueue</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#flatmapcomponents" class="sidebar-link">flatMapComponents</a></li></ul></li><li><a href="/blog/Vue/router/#路由导航执行逻辑" class="sidebar-link">路由导航执行逻辑</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#beforehooks" class="sidebar-link">beforeHooks</a></li></ul></li><li><a href="/blog/Vue/router/#url" class="sidebar-link">url</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#setuplisteners" class="sidebar-link">setupListeners</a></li></ul></li><li><a href="/blog/Vue/router/#组件" class="sidebar-link">组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/Vue/router/#router-view" class="sidebar-link">router-view</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#registerrouteinstance" class="sidebar-link">registerRouteInstance</a></li><li class="sidebar-sub-header"><a href="/blog/Vue/router/#router-link" class="sidebar-link">router-link</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-router"><a href="#vue-router" class="header-anchor">#</a> vue-router</h1> <h2 id="vue-use实现"><a href="#vue-use实现" class="header-anchor">#</a> Vue.use实现</h2> <p>首先，说明<strong>Vue使用插件</strong>的原理，也就是 <strong>Vue.use</strong>的实现
+在 Vue 中的代码定义如下</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// core/global-api/use.js</span>
+<span class="token keyword">function</span> <span class="token function">initUse</span><span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Vue<span class="token punctuation">.</span><span class="token function-variable function">use</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">plugin</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> installedPlugins <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>_installedPlugins <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_installPlugins
+    <span class="token comment">// 注意这个use方法是vue的静态方法，this = vue</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>installedPlugins<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>plugin<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 已经安装过的，有缓存</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> args <span class="token operator">=</span> <span class="token function">toArray</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    args<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// Vue 作为参数注入到，作为第一个参数</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> plugin<span class="token punctuation">.</span>install <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      plugin<span class="token punctuation">.</span><span class="token function">install</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>plugin<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> plugin <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">plugin</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span> <span class="token comment">// 注意看这里，调用的上下文为null</span>
+    <span class="token punctuation">}</span>
+    installedPlugins<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>plugin<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span>
+    <span class="token comment">// return Vue</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="toarray-实现"><a href="#toarray-实现" class="header-anchor">#</a> toArray 实现</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// shared/util.js</span>
+<span class="token keyword">function</span> <span class="token function">toArray</span><span class="token punctuation">(</span><span class="token parameter">list<span class="token punctuation">,</span> start</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 也就是将 start 位置开始的数组 复制到一个新的数组返回</span>
+  start <span class="token operator">=</span> start <span class="token operator">||</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> i <span class="token operator">=</span> list<span class="token punctuation">.</span>length <span class="token operator">-</span> start
+  <span class="token keyword">const</span> ret <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ret<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> list<span class="token punctuation">[</span>i <span class="token operator">+</span> start<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> ret
+<span class="token punctuation">}</span>
+
+</code></pre></div><blockquote><p>接下来就是对 <strong>router的具体实现</strong></p></blockquote> <h2 id="router-的具体入口"><a href="#router-的具体入口" class="header-anchor">#</a> router 的具体入口</h2> <p>在vue-router使用中，一般是<strong>导出之后使用 Vue.use(VueRouter)</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.js</span>
+<span class="token keyword">class</span> <span class="token class-name">VueRouter</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> <span class="token function-variable function">install</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span>
+VueRouter<span class="token punctuation">.</span>install <span class="token operator">=</span> install
+
+<span class="token comment">// install.js</span>
+<span class="token keyword">function</span> <span class="token function">install</span><span class="token punctuation">(</span><span class="token parameter">Vue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>install<span class="token punctuation">.</span>installed <span class="token operator">&amp;&amp;</span> _Vue <span class="token operator">===</span> Vue<span class="token punctuation">)</span> <span class="token keyword">return</span> 
+  <span class="token comment">// _Vue 是内部变量，Vue的副本</span>
+  install<span class="token punctuation">.</span>installed <span class="token operator">=</span> <span class="token boolean">true</span>
+  _Vue <span class="token operator">=</span> Vue
+  <span class="token keyword">const</span> <span class="token function-variable function">isDef</span> <span class="token operator">=</span> <span class="token parameter">v</span> <span class="token operator">=&gt;</span> v <span class="token operator">!==</span> <span class="token keyword">undefined</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">registerInstance</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">vm<span class="token punctuation">,</span> callVal</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 路由注册方法</span>
+    <span class="token keyword">let</span> i <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>_parentVnode
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>registerRouteInstance<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">i</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> callVal<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// 通过mixin混入钩子函数</span>
+    <span class="token comment">// Vue.mixin直接合并到Vue.options上，之后的每个组件都会执行这两个钩子</span>
+    <span class="token function">beforeCreate</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>router<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_routerRoot <span class="token operator">=</span> <span class="token keyword">this</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_router <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$options<span class="token punctuation">.</span>router
+        <span class="token comment">// 根节点，初始化router</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_router<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token comment">// 根节点设置响应式对象 this._route = this._router.history.current</span>
+        Vue<span class="token punctuation">.</span>util<span class="token punctuation">.</span><span class="token function">defineReactive</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token string">'_route'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_router<span class="token punctuation">.</span>history<span class="token punctuation">.</span>current<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 非根节点，往上递归找到 根节点的router选项</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_routerRoot <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$parent <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span>_routerRoot<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token keyword">this</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">registerInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">destroyed</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">registerInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 通过 defineProperty 设置 this.$router 和 this.$route</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'$router'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">get</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_routerRoot<span class="token punctuation">.</span>_router <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">,</span> <span class="token string">'$route'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">get</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_routerRoot<span class="token punctuation">.</span>_route <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// view和link 组件注册</span>
+  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'RouterView'</span><span class="token punctuation">,</span> View<span class="token punctuation">)</span>
+  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'RouterLink'</span><span class="token punctuation">,</span> Link<span class="token punctuation">)</span>
+  <span class="token comment">// 合并策略</span>
+  <span class="token keyword">const</span> strats <span class="token operator">=</span> Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>optionMergeStrategies
+  strats<span class="token punctuation">.</span>beforeRouteEnter <span class="token operator">=</span> strats<span class="token punctuation">.</span>beforeRouteLeave <span class="token operator">=</span> strats<span class="token punctuation">.</span>beforeRouteUpdate <span class="token operator">=</span> strats<span class="token punctuation">.</span>created
+
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="init"><a href="#init" class="header-anchor">#</a> init</h2> <p><strong>根组件</strong>都会在 <strong>beforeCreate钩子</strong> 中执行 this.$options.init()</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.js 的 class 中</span>
+<span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>apps<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+  app<span class="token punctuation">.</span><span class="token function">$once</span><span class="token punctuation">(</span><span class="token string">'hook:destroyed'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当注册的 vue实例销毁时，就要删除对应的router实例</span>
+    <span class="token keyword">const</span> index <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>apps<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>apps<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>app <span class="token operator">===</span> app<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>app <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>apps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token keyword">null</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>history<span class="token punctuation">.</span><span class="token function">teardown</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token comment">// 已经注册过了</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>app <span class="token operator">=</span> app
+  <span class="token keyword">const</span> history <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>history 
+  <span class="token comment">// 一般先new 一个 router对象，所以这里会获取到 其history属性</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>history <span class="token keyword">instanceof</span> <span class="token class-name">HTML5History</span> <span class="token operator">||</span> history <span class="token keyword">instanceof</span> <span class="token class-name">HashHistory</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 浏览器环境下的路由history属性</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleInitialScroll</span> <span class="token operator">=</span> <span class="token parameter">routeOrError</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> from <span class="token operator">=</span> history<span class="token punctuation">.</span>current
+    <span class="token keyword">const</span> expectScroll <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>options<span class="token punctuation">.</span>scrollBehavior
+    <span class="token keyword">const</span> supportsScroll <span class="token operator">=</span> supportsPushState <span class="token operator">&amp;&amp;</span> expectScroll
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>supportsScroll <span class="token operator">&amp;&amp;</span> <span class="token string">'fullPath'</span> <span class="token keyword">in</span> routeOrError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">handleScroll</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> routeOrError<span class="token punctuation">,</span> from<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">setupListeners</span> <span class="token operator">=</span> <span class="token parameter">routeOrError</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    history<span class="token punctuation">.</span><span class="token function">setupListeners</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">handleInitialScroll</span><span class="token punctuation">(</span>routeOrError<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  history<span class="token punctuation">.</span><span class="token function">transitionTo</span><span class="token punctuation">(</span>
+    <span class="token comment">// init 过程中，获取当前的路由地址，执行首次 transitionTo 的过渡</span>
+    history<span class="token punctuation">.</span><span class="token function">getCurrentLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    setupListeners<span class="token punctuation">,</span>
+    setupListeners
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+  history<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>apps<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">app</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 路由变化，根实例的 _route 属性变化</span>
+    <span class="token comment">// 在上面mixin过程中，_route是根实例的响应式数据，子组件递归找到的也是新的_route</span>
+      app<span class="token punctuation">.</span>_route <span class="token operator">=</span> route
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>  
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="transitionto"><a href="#transitionto" class="header-anchor">#</a> transitionTo</h3> <p>这是history基本类的方法</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/base.js</span>
+<span class="token keyword">class</span> <span class="token class-name">History</span> <span class="token punctuation">{</span>
+  <span class="token function">transitionTo</span> <span class="token punctuation">(</span><span class="token parameter">location<span class="token punctuation">,</span> onComplete<span class="token punctuation">,</span> onAbort</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> route <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>location<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current<span class="token punctuation">)</span>
+    <span class="token comment">// 实际上调用了 router 的 match 方法，生成一条 route 路径</span>
+    <span class="token comment">// ...</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">confirmTransition</span><span class="token punctuation">(</span>
+      route<span class="token punctuation">,</span> <span class="token comment">// 上一步生成的路径对象</span>
+      <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+        onComplete <span class="token operator">&amp;&amp;</span> <span class="token function">onComplete</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ensureURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>afterHooks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">hook</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          hook <span class="token operator">&amp;&amp;</span> <span class="token function">hook</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> prev<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>ready<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>ready <span class="token operator">=</span> <span class="token boolean">true</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>readyCbs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">cb</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">cb</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+       <span class="token comment">//...</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// index.js</span>
+<span class="token function">match</span> <span class="token punctuation">(</span><span class="token parameter">raw<span class="token punctuation">,</span> current<span class="token punctuation">,</span> redirectedFrom</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 实际上就是 matcher 的 match 方法</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>matcher<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>raw<span class="token punctuation">,</span> current<span class="token punctuation">,</span> redirectedFrom<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="初始化路由对象"><a href="#初始化路由对象" class="header-anchor">#</a> 初始化路由对象</h2> <p>然后通过 <strong>new VueRouter</strong> 初始化路由对象呢</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">VueRouter</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>apps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options
+    <span class="token keyword">this</span><span class="token punctuation">.</span>beforeHooks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>resolveHooks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>afterHooks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>matcher <span class="token operator">=</span> <span class="token function">createMatcher</span><span class="token punctuation">(</span>options<span class="token punctuation">.</span>routes <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">let</span> mode <span class="token operator">=</span> options<span class="token punctuation">.</span>mode <span class="token operator">||</span> <span class="token string">'hash'</span>
+    <span class="token comment">// 判断是否支持 history 模式</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>fallback <span class="token operator">=</span> 
+      mode <span class="token operator">===</span> <span class="token string">'history'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>supportsPushState <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>fallback <span class="token operator">!==</span> <span class="token boolean">false</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>fallback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 不支持就改用 hash 模式</span>
+        mode <span class="token operator">=</span> <span class="token string">'hash'</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>inBrowser<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 服务器 使用 抽象模式</span>
+        mode <span class="token operator">=</span> <span class="token string">'abstract'</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mode <span class="token operator">=</span> mode
+    <span class="token comment">// 根据不同的模式，建立不同的 history 对象</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>mode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">'history'</span><span class="token operator">:</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HTML5History</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> options<span class="token punctuation">.</span>base<span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+      <span class="token keyword">case</span> <span class="token string">'hash'</span><span class="token operator">:</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashHistory</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> options<span class="token punctuation">.</span>base<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>fallback<span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+      <span class="token keyword">case</span> <span class="token string">'abstract'</span><span class="token operator">:</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>history <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AbstractHistory</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> options<span class="token punctuation">.</span>base<span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+      <span class="token keyword">default</span><span class="token operator">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">assert</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">invalid mode: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>mode<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><blockquote><p>初始化：router对象实例化，主要有 <strong>matcher对象属性</strong> 和 <strong>history 对象属性</strong></p></blockquote> <h3 id="supportspushstate"><a href="#supportspushstate" class="header-anchor">#</a> supportsPushState</h3> <p>用于判断是否在浏览器环境，同时判断该浏览器是否支持 history 模式</p> <div class="language-js extra-class"><pre class="language-js"><code>  inBrowser <span class="token operator">=</span> <span class="token keyword">typeof</span> window <span class="token operator">!==</span> <span class="token string">'undefined'</span>
+  inBrowser <span class="token operator">&amp;&amp;</span>
+  <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> ua <span class="token operator">=</span> window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      <span class="token punctuation">(</span>ua<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Android 2.'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> ua<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Android 4.0'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      ua<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Mobile Safari'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span>
+      ua<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Chrome'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span>
+      ua<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'Windows Phone'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 特定 ua 直接返回false</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> window<span class="token punctuation">.</span>history <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> window<span class="token punctuation">.</span>history<span class="token punctuation">.</span>pushState <span class="token operator">===</span> <span class="token string">'function'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 主要判断 window.history 对象是否存在</span>
+</code></pre></div><h3 id="matcher"><a href="#matcher" class="header-anchor">#</a> matcher</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// create-matcher.js</span>
+<span class="token keyword">function</span> <span class="token function">createMatcher</span><span class="token punctuation">(</span><span class="token parameter">routes<span class="token punctuation">,</span> router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// routes 就是传入的路由列表</span>
+  <span class="token comment">// 创建路由映射表</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> pathList<span class="token punctuation">,</span> pathMap<span class="token punctuation">,</span> nameMap <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createRouteMap</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span>
+  <span class="token comment">// 根据routes列表，生成对应的路由属性</span>
+  <span class="token comment">// ... 一些以后会用的 matcher 的属性方法</span>
+  <span class="token keyword">function</span> <span class="token function">addRoutes</span> <span class="token punctuation">(</span><span class="token parameter">routes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这里传入的是第一次生成返回的对象引用</span>
+    <span class="token function">createRouteMap</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> pathList<span class="token punctuation">,</span> pathMap<span class="token punctuation">,</span> nameMap<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    match<span class="token punctuation">,</span>
+    addRoute<span class="token punctuation">,</span>
+    getRoutes<span class="token punctuation">,</span>
+    addRoutes
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 这个返回的对象就是matcher，返回的属性是上面定义的方法</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="createroutemap"><a href="#createroutemap" class="header-anchor">#</a> createRouteMap</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// create-route-map.js</span>
+<span class="token keyword">function</span> <span class="token function">createRouteMap</span><span class="token punctuation">(</span><span class="token parameter">routes<span class="token punctuation">,</span> oldPathList<span class="token punctuation">,</span> oldPathMap<span class="token punctuation">,</span> oldNameMap<span class="token punctuation">,</span> parentRoute</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// routes 就是定义的路由列表</span>
+  <span class="token keyword">const</span> pathList <span class="token operator">=</span> oldPathList <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> pathMap <span class="token operator">=</span> oldPathMap <span class="token operator">||</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> nameMap <span class="token operator">=</span> oldNameMap <span class="token operator">||</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+  
+  routes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">addRouteRecord</span><span class="token punctuation">(</span>pathList<span class="token punctuation">,</span> pathMap<span class="token punctuation">,</span> nameMap<span class="token punctuation">,</span> route<span class="token punctuation">,</span> parentRoute<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// 通配符，放到最后一位</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> l <span class="token operator">=</span> pathList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pathList<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      pathList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>pathList<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+      l<span class="token operator">--</span>
+      i<span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 返回对象引用，可用于后续动态添加路由</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    pathList<span class="token punctuation">,</span>
+    pathMap<span class="token punctuation">,</span>
+    nameMap<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">addRouteRecord</span><span class="token punctuation">(</span><span class="token parameter">pathList<span class="token punctuation">,</span> pathMap<span class="token punctuation">,</span> nameMap<span class="token punctuation">,</span> route<span class="token punctuation">,</span> parent<span class="token punctuation">,</span> matchAs</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+  <span class="token comment">// 获取用户设置的path和name</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> path<span class="token punctuation">,</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> route
+  <span class="token keyword">const</span> pathToRegexpOptions <span class="token operator">=</span> route<span class="token punctuation">.</span>pathToRegexpOptions <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 就是获取完整path，如果有parent的话就拼起来</span>
+<span class="token keyword">const</span> normalizedPath<span class="token operator">=</span><span class="token function">normalizePath</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span>parent<span class="token punctuation">,</span>pathToRegexpOptions<span class="token punctuation">.</span>strict<span class="token punctuation">)</span>
+ <span class="token comment">// routeRecord 对象创建</span>
+ <span class="token keyword">const</span> record <span class="token operator">=</span> <span class="token punctuation">{</span>
+   path<span class="token operator">:</span> normalizedPath<span class="token punctuation">,</span>
+   regex<span class="token operator">:</span> <span class="token function">compileRouteRegex</span><span class="token punctuation">(</span>normalizedPath<span class="token punctuation">,</span> pathToRegexpOptions<span class="token punctuation">)</span><span class="token punctuation">,</span>
+   alias<span class="token operator">:</span> route<span class="token punctuation">.</span>alias
+      <span class="token operator">?</span> <span class="token keyword">typeof</span> route<span class="token punctuation">.</span>alias <span class="token operator">===</span> <span class="token string">'string'</span>
+        <span class="token operator">?</span> <span class="token punctuation">[</span>route<span class="token punctuation">.</span>alias<span class="token punctuation">]</span>
+        <span class="token operator">:</span> route<span class="token punctuation">.</span>alias
+      <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    instances<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    enteredCbs<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">,</span>
+    parent<span class="token punctuation">,</span>
+    matchAs<span class="token punctuation">,</span>
+    redirect<span class="token operator">:</span> route<span class="token punctuation">.</span>redirect<span class="token punctuation">,</span>
+    beforeEnter<span class="token operator">:</span> route<span class="token punctuation">.</span>beforeEnter<span class="token punctuation">,</span>
+    meta<span class="token operator">:</span> route<span class="token punctuation">.</span>meta <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    props<span class="token operator">:</span>
+      route<span class="token punctuation">.</span>props <span class="token operator">==</span> <span class="token keyword">null</span>
+        <span class="token operator">?</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token operator">:</span> route<span class="token punctuation">.</span>components
+          <span class="token operator">?</span> route<span class="token punctuation">.</span>props
+          <span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> route<span class="token punctuation">.</span>props <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 遍历子路由，递归调用 addRouteRecord</span>
+    route<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">child</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> childMatchAs <span class="token operator">=</span> matchAs
+        <span class="token operator">?</span> <span class="token function">cleanPath</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>matchAs<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>child<span class="token punctuation">.</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+        <span class="token operator">:</span> <span class="token keyword">undefined</span>
+      <span class="token function">addRouteRecord</span><span class="token punctuation">(</span>pathList<span class="token punctuation">,</span> pathMap<span class="token punctuation">,</span> nameMap<span class="token punctuation">,</span> child<span class="token punctuation">,</span> record<span class="token punctuation">,</span> childMatchAs<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+  <span class="token comment">// 以完整的 path 为key，记录在map</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>pathMap<span class="token punctuation">[</span>record<span class="token punctuation">.</span>path<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    pathList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>record<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+    pathMap<span class="token punctuation">[</span>record<span class="token punctuation">.</span>path<span class="token punctuation">]</span> <span class="token operator">=</span> record
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ... name也是根据 route.name记录在nameMap</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">// index.js</span>
+<span class="token comment">// VueRouter类中，需要手动添加 route 的时候，一般是用于权限控制</span>
+<span class="token function">addRoutes</span><span class="token punctuation">(</span><span class="token parameter">routes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>matcher<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="match-方法"><a href="#match-方法" class="header-anchor">#</a> match 方法</h3> <p>在 <strong>transitionTo</strong> 过程中，最终调用了 <strong>matcher 的 match</strong> 方法，生成一个 <strong>route 路径对象</strong>返回</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// create-matcher.js</span>
+<span class="token keyword">function</span> <span class="token function">match</span><span class="token punctuation">(</span><span class="token parameter">raw<span class="token punctuation">,</span> currentRoute<span class="token punctuation">,</span> redirectFrom</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 生成一个对应的location</span>
+  <span class="token keyword">const</span> location <span class="token operator">=</span> <span class="token function">normalizeLocation</span><span class="token punctuation">(</span>raw<span class="token punctuation">,</span> currentRoute<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> router<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> location
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 有设置name的情况</span>
+    <span class="token keyword">const</span> record <span class="token operator">=</span> nameMap<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>record<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">_createRoute</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> location<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> paramNames <span class="token operator">=</span> record<span class="token punctuation">.</span>regex<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token operator">!</span>key<span class="token punctuation">.</span>optional<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> key<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> location<span class="token punctuation">.</span>params <span class="token operator">!==</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      location<span class="token punctuation">.</span>params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>currentRoute <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> currentRoute<span class="token punctuation">.</span>params <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> currentRoute<span class="token punctuation">.</span>params<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> location<span class="token punctuation">.</span>params<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> paramNames<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          location<span class="token punctuation">.</span>params<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> currentRoute<span class="token punctuation">.</span>params<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    location<span class="token punctuation">.</span>path <span class="token operator">=</span> <span class="token function">fillParams</span><span class="token punctuation">(</span>record<span class="token punctuation">.</span>path<span class="token punctuation">,</span> location<span class="token punctuation">.</span>params<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">named route &quot;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&quot;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">_createRoute</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span> location<span class="token punctuation">,</span> redirectedFrom<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>location<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    location<span class="token punctuation">.</span>params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> pathList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> path <span class="token operator">=</span> pathList<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+      <span class="token keyword">const</span> record <span class="token operator">=</span> pathMap<span class="token punctuation">[</span>path<span class="token punctuation">]</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">matchRoute</span><span class="token punctuation">(</span>record<span class="token punctuation">.</span>regex<span class="token punctuation">,</span> location<span class="token punctuation">.</span>path<span class="token punctuation">,</span> location<span class="token punctuation">.</span>params<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">_createRoute</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span> location<span class="token punctuation">,</span> redirectedFrom<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">_createRoute</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> location<span class="token punctuation">)</span> <span class="token comment">// 这是没有匹配到的情况</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="normalizelocation"><a href="#normalizelocation" class="header-anchor">#</a> normalizeLocation</h4> <p>用于根据输入来计算返回新的 <strong>location</strong> 对象</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// util/location.js</span>
+<span class="token keyword">function</span> <span class="token function">normalizeLocation</span><span class="token punctuation">(</span><span class="token parameter">raw<span class="token punctuation">,</span> current<span class="token punctuation">,</span> append<span class="token punctuation">,</span> router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> next <span class="token operator">=</span> <span class="token keyword">typeof</span> raw <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">?</span> <span class="token punctuation">{</span> path<span class="token operator">:</span> raw <span class="token punctuation">}</span> <span class="token operator">:</span> raw
+  <span class="token comment">// ...</span>
+  <span class="token keyword">const</span> parsedPath <span class="token operator">=</span> <span class="token function">parsePath</span><span class="token punctuation">(</span>next<span class="token punctuation">.</span>path <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> basePath <span class="token operator">=</span> <span class="token punctuation">(</span>current <span class="token operator">&amp;&amp;</span> current<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'/'</span>
+  <span class="token comment">// 根据前后的path对比，得到新的path</span>
+  <span class="token keyword">const</span> path <span class="token operator">=</span> parsedPath<span class="token punctuation">.</span>path
+    <span class="token operator">?</span> <span class="token function">resolvePath</span><span class="token punctuation">(</span>parsedPath<span class="token punctuation">,</span> basePath<span class="token punctuation">,</span> append <span class="token operator">||</span> next<span class="token punctuation">.</span>append<span class="token punctuation">)</span>
+    <span class="token operator">:</span> basePath
+  <span class="token comment">//...</span>
+  <span class="token comment">// 返回的location对象</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    _normalized<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">,</span>
+    query<span class="token punctuation">,</span>
+    hash<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// query 和 hash 也是根据前后的变化计算得到</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><blockquote><p>根据normalizeLocation生成的location，其中的name或者path属性，匹配到对应的 <strong>RouteRecord</strong>
+最后使用 <strong>_createRoute</strong> 将 <strong>RouteRecord</strong> 生成一个 <strong>Route</strong> 对象</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// crate-matcher.js</span>
+<span class="token keyword">function</span> <span class="token function">_createRoute</span><span class="token punctuation">(</span><span class="token parameter">record<span class="token punctuation">,</span> location<span class="token punctuation">,</span> redirectedFrom</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>record <span class="token operator">&amp;&amp;</span> record<span class="token punctuation">.</span>redirect<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">redirect</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span> redirectedFrom <span class="token operator">||</span> location<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>record <span class="token operator">&amp;&amp;</span> record<span class="token punctuation">.</span>matchAs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">alias</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span> location<span class="token punctuation">,</span> record<span class="token punctuation">.</span>matchAs<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 一般情况考虑最后这分枝</span>
+    <span class="token keyword">return</span> <span class="token function">createRoute</span><span class="token punctuation">(</span>record<span class="token punctuation">,</span> location<span class="token punctuation">,</span> redirectedFrom<span class="token punctuation">,</span> router<span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>
+
+<span class="token comment">// util/route.js</span>
+<span class="token keyword">function</span> <span class="token function">createRoute</span><span class="token punctuation">(</span><span class="token parameter">record<span class="token punctuation">,</span> location<span class="token punctuation">,</span> redirectedFrom<span class="token punctuation">,</span> router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> query <span class="token operator">=</span> location<span class="token punctuation">.</span>query <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 复制query</span>
+    query <span class="token operator">=</span> <span class="token function">clone</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">const</span> route <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> location<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token punctuation">(</span>record <span class="token operator">&amp;&amp;</span> record<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    <span class="token comment">// ...</span>
+    <span class="token comment">// matched 用于之后渲染组件提供了依据，包括路径上匹配的所有 RouteRecord</span>
+    matched<span class="token operator">:</span> record <span class="token operator">?</span> <span class="token function">formatMatch</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 最终返回一条Route路径</span>
+  <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span> <span class="token comment">// 封冻route对象，不可修改属性</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// util/route.js</span>
+<span class="token keyword">function</span> <span class="token function">formatMatch</span><span class="token punctuation">(</span><span class="token parameter">record</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+    record <span class="token operator">=</span> record<span class="token punctuation">.</span>parent
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> res
+  <span class="token comment">// 往上递归寻找 RouteRecord 的父级</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>总结：初始化router对象实例，创建路由映射表routemap和pathmap等，之后matcher根据location生成路径对象route，最后根据route进行视图切换</p></blockquote> <h2 id="路径切换"><a href="#路径切换" class="header-anchor">#</a> 路径切换</h2> <p>通过上面可以知道，<strong>history对象</strong> 通过 <strong>transitionTo</strong> 方法，实现路径切换</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/base.js</span>
+<span class="token function">transition</span><span class="token punctuation">(</span><span class="token parameter">location<span class="token punctuation">,</span> onComplete<span class="token punctuation">,</span> onAbort</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> route
+  <span class="token comment">// 创建路径对象route</span>
+  route <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>location<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> prev <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token comment">// 没切换之前的路径对象</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">confirmTransition</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 可以看到实际上调用了 confirmTransition 方法</span>
+    <span class="token comment">// 传递参数是生成的 新路径对象route，成功回调，失败回调</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    onComplete <span class="token operator">&amp;&amp;</span> <span class="token function">onComplete</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ensureURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>afterHooks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">hook</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      hook <span class="token operator">&amp;&amp;</span> <span class="token function">hook</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> prev<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>ready<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这是初始化 histroy 切换的时候会用的</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>ready <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>readyCbs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">cb</span> <span class="token operator">=&gt;</span> <span class="token function">cb</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">/**/</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">confirmTransition</span><span class="token punctuation">(</span><span class="token parameter">route<span class="token punctuation">,</span> onComplete<span class="token punctuation">,</span> onAbort</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> current <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token comment">// 这是 history 实例维护的 当前route对象</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>pending <span class="token operator">=</span> route <span class="token comment">// 需要切换到的 路径route</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">const</span> lastRouteIndex <span class="token operator">=</span> route<span class="token punctuation">.</span>matched<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
+  <span class="token keyword">const</span> lastCurrentIndex <span class="token operator">=</span> current<span class="token punctuation">.</span>matched<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
+  
+  <span class="token comment">// 前后的 route 对象是一样的</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isSameRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> current<span class="token punctuation">)</span>
+    <span class="token operator">&amp;&amp;</span> lastRouteIndex <span class="token operator">===</span> lastCurrentIndex
+    <span class="token operator">&amp;&amp;</span> route<span class="token punctuation">.</span>matched<span class="token punctuation">[</span>lastRouteIndex<span class="token punctuation">]</span> <span class="token operator">===</span> current<span class="token punctuation">.</span>matched<span class="token punctuation">[</span>lastCurrentIndex<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ensureURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>hash<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 页面滑动到对应的hash位置</span>
+        <span class="token function">handleScroll</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">,</span> current<span class="token punctuation">,</span> route<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token comment">//</span>
+    <span class="token punctuation">}</span>
+
+ <span class="token comment">// 根据前后 route 计算得到 对应不同状态的组件更新的队列</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> updated<span class="token punctuation">,</span> deactivated<span class="token punctuation">,</span> activated <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">resolveQueue</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>current<span class="token punctuation">.</span>matched<span class="token punctuation">,</span> route<span class="token punctuation">.</span>matched<span class="token punctuation">)</span>
+  
+  <span class="token comment">// 之后需要执行的路由守卫函数列表</span>
+  <span class="token comment">// 组件离开、路由进入、组件更新、组件进入、异步组件</span>
+  <span class="token comment">// 数组项是函数 (to, from, next) =&gt; {}</span>
+  <span class="token keyword">const</span> queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>
+    <span class="token function">extractLeaveGuards</span><span class="token punctuation">(</span>deactivated<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>beforeHooks<span class="token punctuation">,</span>
+    <span class="token function">extractUpdateHooks</span><span class="token punctuation">(</span>updated<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    activated<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">m</span> <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>beforeEnter<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">resolveAsyncComponents</span><span class="token punctuation">(</span>activated<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+  
+  <span class="token comment">// 路由守卫迭代器函数</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">iterator</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">hook<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当前切换路由与pending的不对应</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>pending <span class="token operator">!==</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">abort</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// hook 三个参数对应路由守卫的 to, from, next 三个参数</span>
+      <span class="token comment">// 只有当守卫参数中的 next 调用的时候，才会调用到 迭代器函数的 next，才能执行下一个守卫函数</span>
+      <span class="token function">hook</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> current<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">to</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>to <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 这里是用于 next(false) 的实现</span>
+          <span class="token comment">// 也就是中止路由跳转的</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ensureURL</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+          <span class="token function">abort</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isError</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ensureURL</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+          <span class="token function">abort</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>
+          <span class="token keyword">typeof</span> to <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">||</span>
+          <span class="token punctuation">(</span><span class="token keyword">typeof</span> to <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span>
+            <span class="token punctuation">(</span><span class="token keyword">typeof</span> to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> to<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token comment">// ...</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> to <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span> to<span class="token punctuation">.</span>replace<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">replact</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">next</span><span class="token punctuation">(</span>to<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token function">runQueue</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span> iterator<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> enterGuards <span class="token operator">=</span> <span class="token function">extractEnterGuards</span><span class="token punctuation">(</span>activated<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> queue <span class="token operator">=</span> enterGuards<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>resolveHooks<span class="token punctuation">)</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="resolvequeue"><a href="#resolvequeue" class="header-anchor">#</a> resolveQueue</h3> <p>用于对比前后route对象的 matched 数组的差异，其中每一项是 RouteRecord</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/base.js</span>
+<span class="token keyword">function</span> <span class="token function">resolveQueue</span><span class="token punctuation">(</span><span class="token parameter">current<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> i
+  <span class="token keyword">const</span> max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>current<span class="token punctuation">.</span>length<span class="token punctuation">,</span> next<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>current<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!==</span> next<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 通过找到首个不一样的点，进行前后分割，得到三个不用的record列表</span>
+  <span class="token comment">// 之后就可以针对不同的列表，执行不同的路由守卫函数</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    updated<span class="token operator">:</span> next<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    activated<span class="token operator">:</span> next<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    deactivated<span class="token operator">:</span> current<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>在确定好不同状态的record列表之后，就是抽离对应的路由导航钩子</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/base.js</span>
+<span class="token keyword">function</span> <span class="token function">bindGuard</span><span class="token punctuation">(</span><span class="token parameter">gurad<span class="token punctuation">,</span> instance</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 其中 instance 是 vue实例</span>
+  <span class="token comment">// 也就是将 guard 的上下文绑定为 instance</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">boundRouteGuard</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">guard</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>instance<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">extractLeaveGuards</span><span class="token punctuation">(</span><span class="token parameter">deactivated</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">extractGuards</span><span class="token punctuation">(</span>deactivated<span class="token punctuation">,</span> <span class="token string">'beforeRouteLeave'</span><span class="token punctuation">,</span> bindGuard<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">extractGuards</span><span class="token punctuation">(</span><span class="token parameter">records<span class="token punctuation">,</span> name<span class="token punctuation">,</span> bind<span class="token punctuation">,</span> reverse</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 通过 flatMapComponents 获取所有 record 中的对应 name 的路由导航</span>
+  <span class="token keyword">const</span> guards <span class="token operator">=</span> <span class="token function">flatMapComponents</span><span class="token punctuation">(</span>records<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">def<span class="token punctuation">,</span> instance<span class="token punctuation">,</span> match<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> guard <span class="token operator">=</span> <span class="token function">extractGuard</span><span class="token punctuation">(</span>def<span class="token punctuation">,</span> name<span class="token punctuation">)</span> <span class="token comment">// 获取对应的钩子函数</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>guard<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>guard<span class="token punctuation">)</span>
+        <span class="token comment">// 绑定 路由导航函数 的 上下文 到 instance也就是vm实例上</span>
+        <span class="token operator">?</span> guard<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">guard</span> <span class="token operator">=&gt;</span> <span class="token function">bind</span><span class="token punctuation">(</span>guard<span class="token punctuation">,</span> instance<span class="token punctuation">,</span> match<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+        <span class="token operator">:</span> <span class="token function">bind</span><span class="token punctuation">(</span>guard<span class="token punctuation">,</span> instance<span class="token punctuation">,</span> match<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">flatten</span><span class="token punctuation">(</span>reverse <span class="token operator">?</span> guards<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> guards<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">extractGuard</span><span class="token punctuation">(</span><span class="token parameter">def<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> def <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    def <span class="token operator">=</span> _Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>def<span class="token punctuation">)</span> <span class="token comment">// 传入的是component选项对象的话，先用extend方法，生成一个组件构造器函数</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> def<span class="token punctuation">.</span>options<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token comment">// 也就是传入的options选项中的钩子函数</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="runqueue"><a href="#runqueue" class="header-anchor">#</a> runQueue</h3> <blockquote><p>这是用在之前抽离的<strong>路由导航列表</strong>的<strong>导航钩子任务队列</strong>实现</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// util/async.js</span>
+<span class="token keyword">function</span> <span class="token function">runQueue</span><span class="token punctuation">(</span><span class="token parameter">queue<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// step 是每一步执行的函数</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">step</span> <span class="token operator">=</span> <span class="token parameter">index</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&gt;=</span> queue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>queue<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// fn 就是 迭代器函数 itarator</span>
+        <span class="token comment">// queue 就是hook队列</span>
+        <span class="token comment">// 函数参数 就是 迭代器第二个参数，当路由守卫的next调用，才会调用该参数</span>
+        <span class="token comment">// 最后递归调用 队列中 下一个路由守卫</span>
+        <span class="token function">fn</span><span class="token punctuation">(</span>queue<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">step</span><span class="token punctuation">(</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">step</span><span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token function">step</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h3 id="flatmapcomponents"><a href="#flatmapcomponents" class="header-anchor">#</a> flatMapComponents</h3> <blockquote><p>在抽离导航守卫的过程中，用到 <strong>flatMapComponents</strong> 方法</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// util/resolve-components.js</span>
+<span class="token keyword">function</span> <span class="token function">flatMapComponents</span> <span class="token punctuation">(</span><span class="token parameter">matched<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token comment">// matched 是 RouteRecord 列表</span>
+ <span class="token comment">// flatten 作用是 二维数组拍平一维数组</span>
+  <span class="token keyword">return</span> <span class="token function">flatten</span><span class="token punctuation">(</span>matched<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">m</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 返回的是 路由导航列表</span>
+    <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span>components<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span>
+      m<span class="token punctuation">.</span>components<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      m<span class="token punctuation">.</span>instances<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      m<span class="token punctuation">,</span> key
+    <span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="路由导航执行逻辑"><a href="#路由导航执行逻辑" class="header-anchor">#</a> 路由导航执行逻辑</h2> <p>路由导航钩子的执行顺序：实际就是 <strong>导航钩子队列</strong> 的顺序</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/base.js</span>
+<span class="token keyword">const</span> queue <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token function">extractLeaveGuards</span><span class="token punctuation">(</span>deactivated<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 组件的beforeRouteLeave</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>beforeHooks<span class="token punctuation">,</span> <span class="token comment">// router 全局 beforeEach</span>
+  <span class="token function">extractUpdateHooks</span><span class="token punctuation">(</span>updated<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 组件 beforeRouteUpdate</span>
+  activated<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">m</span> <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>beforeEnter<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// router 中 routeRecord 配置中的 beforeEnter</span>
+  <span class="token function">resolveAsyncComponents</span><span class="token punctuation">(</span>activated<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 异步组件</span>
+<span class="token punctuation">]</span>
+</code></pre></div><h3 id="beforehooks"><a href="#beforehooks" class="header-anchor">#</a> beforeHooks</h3> <p>全局路由进入前的钩子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// src/index.js</span>
+<span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">registerHook</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>beforeHooks<span class="token punctuation">,</span> fn<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">registerHook</span> <span class="token punctuation">(</span><span class="token parameter">list<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> i <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> list<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>VueRouter中其他<strong>全局钩子</strong> 实现原理一样，只是换了个钩子名。本质是将钩子函数存在<strong>数组中</strong>，调用的时候按顺序调用，<strong>注册的时候返回的函数可以用于删除该钩子，做到动态钩子导入或删除</strong></p> <h4 id="resolveasynccomponents"><a href="#resolveasynccomponents" class="header-anchor">#</a> resolveAsyncComponents</h4> <p>用于解析<strong>router定义中的异步组件</strong>，如<strong>动态import或者require</strong>
+解析过程类似于<strong>动态组件</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// utils/resolve-components.js</span>
+<span class="token keyword">function</span> <span class="token function">resolveAsyncComponents</span><span class="token punctuation">(</span><span class="token parameter">matched</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// matched是匹配的record列表</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 返回的函数作为钩子队列中的一项</span>
+    <span class="token keyword">let</span> hasAsync <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token keyword">let</span> pending <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token comment">//..</span>
+    <span class="token function">flatMapComponents</span><span class="token punctuation">(</span>matched<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">def<span class="token punctuation">,</span> _<span class="token punctuation">,</span> match<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> def <span class="token operator">===</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> def<span class="token punctuation">.</span>cid <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// () =&gt; import(comp)</span>
+        hasAsync <span class="token operator">=</span> <span class="token boolean">true</span>
+        pending<span class="token operator">++</span>
+        <span class="token keyword">const</span> resolve <span class="token operator">=</span> <span class="token function">once</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolvedDef</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isESModule</span><span class="token punctuation">(</span>resolvedDef<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// es 模块化方案</span>
+            resolvedDef <span class="token operator">=</span> resolvedDef<span class="token punctuation">.</span>default
+          <span class="token punctuation">}</span>
+          def<span class="token punctuation">.</span>resolved <span class="token operator">=</span> <span class="token keyword">typeof</span> resolvedDef <span class="token operator">===</span> <span class="token string">'function'</span>
+            <span class="token operator">?</span> resolvedDef
+            <span class="token operator">:</span> _Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span>resolvedDef<span class="token punctuation">)</span>
+          match<span class="token punctuation">.</span>components<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> resolvedDef 
+          <span class="token comment">// 替换原来match的动态导入，下一次再用这个组件也不用重新加载</span>
+          pending<span class="token operator">--</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>pending <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// matched 是通过map执行flatMapComponents的，当pending = 0 就是全部加载了</span>
+            <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> <span class="token function-variable function">reject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+        <span class="token keyword">let</span> res
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          res <span class="token operator">=</span> <span class="token function">def</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token comment">// def 动态导入函数执行</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> res<span class="token punctuation">.</span>then <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 返回promise，也就是webpack的import</span>
+            res<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> comp <span class="token operator">=</span> res<span class="token punctuation">.</span>component
+            <span class="token comment">// ... 也是 promise的处理</span>
+            comp<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>hasAsync<span class="token punctuation">)</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><blockquote><p>加载完所有<strong>异步组件</strong>之后，再调用<strong>next</strong>，之后是执行 <strong>enterGuard导航钩子</strong> 逻辑</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">runQueue</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span> iterator<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// activated 的 record，抽离beforeRouteEnter</span>
+  <span class="token comment">// beforeRouteEnter 导航的next传入函数作为回调，可以访问vm实例 next(vm =&gt; {})</span>
+  <span class="token keyword">const</span> enterGuards <span class="token operator">=</span> <span class="token function">extractEnterGuards</span><span class="token punctuation">(</span>activated<span class="token punctuation">)</span>
+  <span class="token comment">// router 的 全局beforeResolve 钩子</span>
+  <span class="token keyword">const</span> queue <span class="token operator">=</span> enterGuards<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>resolveHooks<span class="token punctuation">)</span>
+  <span class="token function">runQueue</span><span class="token punctuation">(</span>queue<span class="token punctuation">,</span> iterator<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 同样是任务队列的实现</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>pending <span class="token operator">!==</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>pending <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token function">onComplete</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>app<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 所有enter执行之后的下一个tick</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">handleRouteEntered</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// util/route.js</span>
+<span class="token keyword">function</span> <span class="token function">handleRouteEntered</span> <span class="token punctuation">(</span><span class="token parameter">route<span class="token operator">:</span> Route</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// route 当前切换到的 路径对象</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> route<span class="token punctuation">.</span>matched<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> record <span class="token operator">=</span> route<span class="token punctuation">.</span>matched<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> name <span class="token keyword">in</span> record<span class="token punctuation">.</span>instances<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> instance <span class="token operator">=</span> record<span class="token punctuation">.</span>instances<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+      <span class="token keyword">const</span> cbs <span class="token operator">=</span> record<span class="token punctuation">.</span>enteredCbs<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>instance <span class="token operator">||</span> <span class="token operator">!</span>cbs<span class="token punctuation">)</span> <span class="token keyword">continue</span>
+      <span class="token keyword">delete</span> record<span class="token punctuation">.</span>enteredCbs<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cbs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 这里是 beforeRouteEnter 的 next中传入的回调函数的执行，因为这时候已经可以访问到vm实例</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>instance<span class="token punctuation">.</span>_isBeingDestroyed<span class="token punctuation">)</span> cbs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>confirmTransition 执行过程到 <strong>beforeResolve</strong>， 之后就是 <strong>onComplete 回调</strong></p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 这是传入的onComplete</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span> <span class="token comment">// route 是需要切换到的 路径对象route</span>
+    onComplete <span class="token operator">&amp;&amp;</span> <span class="token function">onComplete</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ensureURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>afterHooks<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">hook</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// router 全局 afterEach</span>
+      hook <span class="token operator">&amp;&amp;</span> <span class="token function">hook</span><span class="token punctuation">(</span>route<span class="token punctuation">,</span> prev<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>ready<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 首次执行初始化的成功回调</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>ready <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>readyCbs<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">cb</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token function">cb</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token comment">// history/base.js</span>
+  <span class="token function">updateRoute</span> <span class="token punctuation">(</span><span class="token parameter">route<span class="token operator">:</span> Route</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 将新的 route 对象赋值给 this.current</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token operator">=</span> route 
+    <span class="token comment">// 执行 cb 回调，这里的cb是初始化时候 history.listen传入</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>cb <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">cb</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>   
+  <span class="token punctuation">}</span>
+
+</code></pre></div><blockquote><p>updateRoute之后，<strong>导航被确认</strong>， 调用 <strong>afterEach</strong>，之后会<strong>触发DOM</strong> 更新，最后通过 nextTick 执行 beforeRouteEnter 传入的 <strong>next回调</strong></p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>  <span class="token comment">// index.js</span>
+  <span class="token comment">// VueRouter 在 init 过程中的最后逻辑</span>
+  <span class="token comment">// 在初始化history的时候，_route 会设置成响应式，改变值就会通知使用的组件派发更新</span>
+    history<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>apps<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">app</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span>_route <span class="token operator">=</span> route
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="url"><a href="#url" class="header-anchor">#</a> url</h2> <p>当点击 <strong>router-link</strong> 的时候，或者当使用 <strong>this.$router.push</strong> 的时候，就会 <strong>切换router-view</strong> 的视图组件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// push 方法在各个 扩展history 类里面实现</span>
+<span class="token comment">// index.js</span>
+<span class="token function">push</span> <span class="token punctuation">(</span><span class="token parameter">location</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// router中调用history的push方法</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>history<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>location<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// history/html5.js</span>
+<span class="token function">push</span> <span class="token punctuation">(</span><span class="token parameter">location</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> current <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">transitionTo</span><span class="token punctuation">(</span>location<span class="token punctuation">,</span> <span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 浏览记录入栈处理</span>
+    <span class="token function">pushState</span><span class="token punctuation">(</span><span class="token function">cleanPath</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>base <span class="token operator">+</span> route<span class="token punctuation">.</span>fullPath<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// router的 全局scrollBehavior 的处理</span>
+    <span class="token function">handleScroll</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">,</span> route<span class="token punctuation">,</span> fromRoute<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token comment">//...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 原理类似，将location转换成route对象，然后路径转换</span>
+<span class="token comment">// 路径转换成功的回调，pushState</span>
+<span class="token comment">// util/push-state.js</span>
+<span class="token keyword">function</span> <span class="token function">pushState</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> replace</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">saveScrollPosition</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 主要是利用了window.history原生属性进行 浏览状态的入栈和出栈</span>
+  <span class="token keyword">const</span> history <span class="token operator">=</span> window<span class="token punctuation">.</span>history
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>replace<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> stateCopy <span class="token operator">=</span> <span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> history<span class="token punctuation">.</span>state<span class="token punctuation">)</span>
+      stateCopy<span class="token punctuation">.</span>key <span class="token operator">=</span> <span class="token function">getStateKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      history<span class="token punctuation">.</span><span class="token function">replaceState</span><span class="token punctuation">(</span>stateCopy<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// key是一个与 window.performance 相关的字符串</span>
+      history<span class="token punctuation">.</span><span class="token function">pushState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        key<span class="token operator">:</span> <span class="token function">setStateKey</span><span class="token punctuation">(</span><span class="token function">genStateKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+        <span class="token string">''</span><span class="token punctuation">,</span>
+        url
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+    <span class="token comment">/// </span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>在 hashHistory 中则是另一种实现</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/hash.js</span>
+<span class="token function">push</span><span class="token punctuation">(</span><span class="token parameter">location</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> current<span class="token operator">:</span> fromRoute <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token comment">// 同样是 transitionTo 转换到对应的 路径对象，然后执行回调</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">transitionTo</span><span class="token punctuation">(</span>
+    location<span class="token punctuation">,</span>
+    <span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">pushHash</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>fullPath<span class="token punctuation">)</span>
+      <span class="token function">handleScroll</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">,</span> route<span class="token punctuation">,</span> fromRoute<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+      onComplete <span class="token operator">&amp;&amp;</span> <span class="token function">onComplete</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    onAbort
+<span class="token punctuation">)</span><span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">pushHash</span> <span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>supportsPushState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 同样是用 window.history.pushState 实现</span>
+    <span class="token function">pushState</span><span class="token punctuation">(</span><span class="token function">getUrl</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash <span class="token operator">=</span> path
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">getUrl</span> <span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 拼装成 完整的 带hash（#）路径返回到上层，执行pushState</span>
+  <span class="token keyword">const</span> href <span class="token operator">=</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
+  <span class="token keyword">const</span> i <span class="token operator">=</span> href<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> base <span class="token operator">=</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> href<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">:</span> href
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>base<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">#</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="setuplisteners"><a href="#setuplisteners" class="header-anchor">#</a> setupListeners</h3> <p>当点击浏览器<strong>后退按钮</strong>的时候也能切换视图，这是由于监听了<strong>popstate事件/hashchange事件</strong>
+在history<strong>第一次transitionTo</strong>的时候，回调函数的<strong>setupListeners</strong>实现了监听</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleInitialScroll</span> <span class="token operator">=</span> <span class="token parameter">routeOrError</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> from <span class="token operator">=</span> history<span class="token punctuation">.</span>current
+  <span class="token keyword">const</span> expectScroll <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>options<span class="token punctuation">.</span>scrollBehavior
+  <span class="token keyword">const</span> supportsScroll <span class="token operator">=</span> supportsPushState <span class="token operator">&amp;&amp;</span> expectScroll
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>supportsScroll <span class="token operator">&amp;&amp;</span> <span class="token string">'fullPath'</span> <span class="token keyword">in</span> routeOrError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">handleScroll</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> routeOrError<span class="token punctuation">,</span> from<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setupListeners</span> <span class="token operator">=</span> <span class="token parameter">routeOrError</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 调用history实例的setupListeners</span>
+  history<span class="token punctuation">.</span><span class="token function">setupListeners</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">handleInitialScroll</span><span class="token punctuation">(</span>routeOrError<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>不同模式下定义方法不同</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// history/html5.js</span>
+<span class="token function">setupListeners</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>router
+  <span class="token comment">//...</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleRoutingEvent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> current <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current
+    <span class="token keyword">const</span> location <span class="token operator">=</span> <span class="token function">getLocation</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>base<span class="token punctuation">)</span>
+    <span class="token comment">//...</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">transitionTo</span><span class="token punctuation">(</span>location<span class="token punctuation">,</span> <span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 针对滚动的处理</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 通过监听 popstate，然后当改变了state的时候使用transitionTo改变route对象引起视图更新</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'popstate'</span><span class="token punctuation">,</span> handleRoutingEvent<span class="token punctuation">)</span>
+  <span class="token comment">// 在router销毁的时候，会逐一执行listeners的函数</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>listeners<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'popstate'</span><span class="token punctuation">,</span> handleRoutingEvent<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// history/hash.js</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">handleRoutingEvent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> current <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>current
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">ensureSlash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">transitionTo</span><span class="token punctuation">(</span><span class="token function">getHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token parameter">route</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>supportsPushState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">replaceHash</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>fullPath<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 同样是监听popstate，如果不支持就监听hashchange</span>
+    <span class="token keyword">const</span> eventType <span class="token operator">=</span> supportsPushState <span class="token operator">?</span> <span class="token string">'popstate'</span> <span class="token operator">:</span> <span class="token string">'hashchange'</span>
+    window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>
+      eventType<span class="token punctuation">,</span>
+      handleRoutingEvent
+    <span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>listeners<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span>eventType<span class="token punctuation">,</span> handleRoutingEvent<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="组件"><a href="#组件" class="header-anchor">#</a> 组件</h2> <h3 id="router-view"><a href="#router-view" class="header-anchor">#</a> router-view</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// components/view.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  functional<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 函数式组件</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> <span class="token punctuation">{</span> props<span class="token punctuation">,</span> children<span class="token punctuation">,</span> parent<span class="token punctuation">,</span> data<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 在data对象中标记</span>
+    data<span class="token punctuation">.</span>rotuerView <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword">const</span> h <span class="token operator">=</span> parent<span class="token punctuation">.</span>$createElement
+    <span class="token keyword">const</span> name <span class="token operator">=</span> props<span class="token punctuation">.</span>name
+    <span class="token keyword">const</span> route <span class="token operator">=</span> parent<span class="token punctuation">.</span>$route <span class="token comment">// 父组件vm的$route</span>
+    <span class="token comment">//...</span>
+    <span class="token keyword">let</span> depth <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>parent <span class="token operator">&amp;&amp;</span> parent<span class="token punctuation">.</span>_routeRoot <span class="token operator">!==</span> parent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> vnodeData <span class="token operator">=</span> parent<span class="token punctuation">.</span>$vnode <span class="token operator">?</span> parent<span class="token punctuation">.</span>$vnode<span class="token punctuation">.</span>data <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>vnodeData<span class="token punctuation">.</span>routerView<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        depth<span class="token operator">++</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//..</span>
+      parent <span class="token operator">=</span> parent<span class="token punctuation">.</span>$parent <span class="token comment">// 往上寻找到视图根节点</span>
+    <span class="token punctuation">}</span>
+    data<span class="token punctuation">.</span>routerViewDepth <span class="token operator">=</span> depth
+    <span class="token comment">//...</span>
+    
+    <span class="token keyword">const</span> matched <span class="token operator">=</span> route<span class="token punctuation">.</span>matched<span class="token punctuation">[</span>depth<span class="token punctuation">]</span> <span class="token comment">// matched 是 route 路径对象的 匹配到的组件路径</span>
+    <span class="token keyword">const</span> component <span class="token operator">=</span> matched <span class="token operator">&amp;&amp;</span> matched<span class="token punctuation">.</span>components<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token comment">// 获取对应的视图组件</span>
+    <span class="token comment">//..</span>
+    data<span class="token punctuation">.</span><span class="token function-variable function">registerRouteInstance</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">vm<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 注册 registerRouteInstance 方法</span>
+      <span class="token keyword">const</span> current <span class="token operator">=</span> matched<span class="token punctuation">.</span>instances<span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>
+        <span class="token punctuation">(</span>val <span class="token operator">&amp;&amp;</span> current <span class="token operator">!==</span> vm<span class="token punctuation">)</span> <span class="token operator">||</span>
+        <span class="token punctuation">(</span><span class="token operator">!</span>val <span class="token operator">&amp;&amp;</span> current <span class="token operator">===</span> vm<span class="token punctuation">)</span>
+      <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 这里就是 在路径对象route上的instances加对应的组件引用，之后导航守卫钩子（beforeRouteEnter）中调用就能拿到对应的matched.instance</span>
+        matched<span class="token punctuation">.</span>instances<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> val
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+   
+   <span class="token comment">//...</span>
+   <span class="token comment">// 最后是渲染matched匹配到的组件</span>
+   <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span>component<span class="token punctuation">,</span> data<span class="token punctuation">,</span> children<span class="token punctuation">)</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="registerrouteinstance"><a href="#registerrouteinstance" class="header-anchor">#</a> registerRouteInstance</h3> <blockquote><p>这是用于注册路由视图组件到matched的方法</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// install.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">registerInstance</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">vm<span class="token punctuation">,</span> callVal</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当前router-view渲染的组件vnode（上面matched到的），data也是上面传的标记</span>
+    <span class="token comment">// vm 是router-view渲染组件vm</span>
+    <span class="token keyword">let</span> i <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>_parentVnode 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isDef</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isDef</span><span class="token punctuation">(</span>i <span class="token operator">=</span> i<span class="token punctuation">.</span>registerRouteInstance<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">i</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> callVal<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//..</span>
+    <span class="token function">registerInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token function-variable function">destroyed</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token function">destroyed</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token comment">// 用于切换时候销毁</span>
+        <span class="token function">registerInstance</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="router-link"><a href="#router-link" class="header-anchor">#</a> router-link</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// component/link.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token parameter">h</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router
+    <span class="token keyword">const</span> current <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route
+    <span class="token comment">// 使用 router 的 resolve 方法，得到对应这个link链接的location对象和route路径对象</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> location<span class="token punctuation">,</span> route<span class="token punctuation">,</span> href <span class="token punctuation">}</span> <span class="token operator">=</span> router<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>to<span class="token punctuation">,</span>
+      current<span class="token punctuation">,</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>append
+    <span class="token punctuation">)</span>
+
+    <span class="token comment">//... 最终的目标路径对象</span>
+    <span class="token keyword">const</span> compareTarget <span class="token operator">=</span> route<span class="token punctuation">.</span>redirectedFrom
+      <span class="token operator">?</span> <span class="token function">createRoute</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token function">normalizeLocation</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>redirectedFrom<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> router<span class="token punctuation">)</span>
+      <span class="token operator">:</span> route
+    <span class="token comment">// ... 事件处理函数</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handler</span> <span class="token operator">=</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">guardEvent</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>replace<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>location<span class="token punctuation">,</span> noop<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>location<span class="token punctuation">,</span> noop<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 渲染函数 data对象 中的on事件对象</span>
+    <span class="token comment">// guardEvent 就是阻止默认事件</span>
+    <span class="token keyword">const</span> on <span class="token operator">=</span> <span class="token punctuation">{</span> click<span class="token operator">:</span> guardEvent <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>event<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>event<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        on<span class="token punctuation">[</span>e<span class="token punctuation">]</span> <span class="token operator">=</span> handler
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      on<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>event<span class="token punctuation">]</span> <span class="token operator">=</span> handler
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tag <span class="token operator">==</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      data<span class="token punctuation">.</span>on <span class="token operator">=</span> on
+      <span class="token comment">//..</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 寻找 默认插槽 中的 a标签元素</span>
+      <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token function">findAnchor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$slots<span class="token punctuation">.</span>default<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        a<span class="token punctuation">.</span>isStatic <span class="token operator">=</span> <span class="token boolean">false</span>
+        <span class="token keyword">const</span> aData <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        aData<span class="token punctuation">.</span>on <span class="token operator">=</span> aData<span class="token punctuation">.</span>on <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token comment">// ... 将on事件对象与adata中的on合并未数组</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        data<span class="token punctuation">.</span>on <span class="token operator">=</span> on
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 最后根据传入的tag渲染</span>
+   <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tag<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$slots<span class="token punctuation">.</span>default<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.54f4db6a.js" defer></script><script src="/blog/assets/js/2.e69a48f0.js" defer></script><script src="/blog/assets/js/31.042666a0.js" defer></script>
+  </body>
+</html>
