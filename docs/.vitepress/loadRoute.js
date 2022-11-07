@@ -9,7 +9,7 @@ export function readRouteMap(prevPath, prev = '', list = []) {
     const dirent = result[i];
     if (dirent.name.match(excludeFileReg)) continue
     
-    const {item: dirItem, itemLink} = generateItem(dirent, prev)
+    const {item: dirItem, itemLink} = generateItem(dirent, prev, dirent.isDirectory())
     if (dirent.isDirectory()) {
       const dirPath = path.resolve(prevPath, dirItem.text)
       readRouteMap(dirPath, itemLink, dirItem.items)
@@ -26,16 +26,15 @@ export function readRouteMap(prevPath, prev = '', list = []) {
   return list
 }
 
-function generateItem(dir, prevLink = '') {
+function generateItem(dir, prevLink = '', idDir) {
   let itemName = dir.name.replace(/.md$/i,  '')
   let itemLink = itemName === 'index' ? `${prevLink}/` : `${prevLink}/${itemName}`
   const item = {
     text: itemName,
-    items: []
   }
-  if (!dir.isDirectory()) {
+  if (!idDir) {
     item.link = itemLink
   }
-  console.log(item)
+  item.items = []
   return {item, itemLink}
 }

@@ -3,7 +3,9 @@ import { readRouteMap } from './loadRoute'
 import path from 'path'
 
 const docsPath = path.resolve('./docs')
-const sidebar = readRouteMap(docsPath)
+let sidebar = readRouteMap(docsPath)
+// 删除首页
+sidebar = sidebar.filter(item => item.text !== 'index')
 
 
 export default defineConfig({
