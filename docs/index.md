@@ -1,3 +1,6 @@
+- [Nuxt 生命周期解析](/Nuxt/lifecycle)
+- 工具库源码解析
+  - [vue-lazyload](/SourceCode/vue-lazyload)
 - Vue 源码解析
   - [初始化](/Vue/initAndMount)
   - [组件化](/Vue/componentInstance/component)
@@ -29,6 +32,4 @@
       - [transition-group](/Vue/transitionGroup)
   - [路由](/Vue/router)
   - [状态管理](/Vue/vuex)
-
-- [Nuxt 生命周期](/Nuxt/lifecycle)
 
