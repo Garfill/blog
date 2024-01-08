@@ -8,7 +8,7 @@
   - [生命周期](/Vue/componentInstance/lifeCycle)
   - [组件注册](/Vue/componentInstance/registerComponent)
   - [异步组件](/Vue/componentInstance/asyncComp)
-  - [响应式原理](/Vue/defineReactive/principle)
+  - [响应式原理](/Vue/defineReactive/reactive)
       - [依赖收集](/Vue/defineReactive/getter)
       - [派发更新](/Vue/defineReactive/setter)
       - [下一帧](/Vue/defineReactive/nexttick)
