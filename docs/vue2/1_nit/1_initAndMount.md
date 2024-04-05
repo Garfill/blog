@@ -1,4 +1,3 @@
-
 # new Vue 实例的初始化
 
 > **Vue.js** 是由 **原型链** 来实现的库，最终构造函数在 **src/core/instance/index.js**

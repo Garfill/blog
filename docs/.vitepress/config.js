@@ -13,7 +13,6 @@ export default defineConfig({
   title: "Garfill Blog",
   base: '/blog/',
   cleanUrls: 'without-subfolders',
-  lastUpdated: true,
   themeConfig: {
     sidebar
   }

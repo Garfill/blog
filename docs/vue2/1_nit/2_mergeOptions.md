@@ -115,7 +115,7 @@ function mergeOptions (parent, child, vm) {
 ```js
 // instance/init.js
 function initInternalComponent (vm, options) {
-  // 已构造器的options 为原型构造
+  // 以构造器的options 为原型构造
   // options 是在初始化组件vm实例时，调用组件的init hook传入的
   /**      
   	options = {
@@ -144,6 +144,3 @@ function initInternalComponent (vm, options) {
   }
 }
 ```
-
-> TODO：之后章节会对各类合并策略进行分析
-

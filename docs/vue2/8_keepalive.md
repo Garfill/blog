@@ -41,8 +41,8 @@ export default {
   render() {
     // 最终返回vnode
     const slot = this.$slots.default
-    // 找到内部slot的第一个组件vnode, 所以一般搭配router-view或者component组件
-    const vnode = getFirstComponentChild(slot) 
+    // 找到内部slot的第一个组件vnode, 一般搭配router-view或者component组件
+    const vnode = getFirstComponentChild(slot)
     // 组件配置项
     const componentOptions = vnode && vnode.componentOptions
     if (componentOptions) {
@@ -97,7 +97,7 @@ function createComponent(...) {
     // 首次渲染的组件componentInstance = undefined
     const isReactive = isDef(vnode.componentInstance) && i.keepAlive
     if (isDef(i = i.hook) && isDef(i = i.init)) {
-      i(vnode) // 调用组件init钩子
+      i(vnode) // 调用组件init 方法
     }
     
     if (isDef(vnode.componentInstance)) {
@@ -140,9 +140,11 @@ const componentVNodeHooks = {
 ```
 
 #### reactivateComponent
-当keep-alive组件vm创建之后，执行的激活操作
+这是命中缓存的组件，重新激活
 ```js
-  function reactivateComponent (vnode, insertedVnodeQueue, parentElm, refElm) {
+function reactivateComponent (
+	vnode, insertedVnodeQueue, parentElm, refElm
+) {
     let i
     let innerNode = vnode
     while (innerNode.componentInstance) {
@@ -164,7 +166,7 @@ const componentVNodeHooks = {
 > 当下一个渲染的组件命中缓存
 
 切换keep-alive组件的时候，引发<keep-alive /> 所在的组件的render重新渲染，**重新patch**
-对于**组件重新patch**，会先执行组件**prepatch**钩子，其中会有**updateChildComponent**方法，用来**更新子组件**
+对于**组件重新patch**，会先执行组件**prepatch**钩子，其中执行**updateChildComponent**方法，用来**更新子组件**
 #### updateChildComponent
 ```js
 // core/instance/lifecycle.js
@@ -210,7 +212,7 @@ const componentVNodeHooks = {
         // 包含keep-alive的组件已经mounted
         queueActivatedComponent(componentInstance)      
       } else {
-        activateChildComponent(componentInstance, true /* direct */)
+        activateChildComponent(componentInstance, true)
       }
     }
   }
