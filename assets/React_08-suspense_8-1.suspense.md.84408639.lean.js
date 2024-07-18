@@ -1,0 +1,1 @@
+import{_ as e,c as s,o as t}from"./app.d474d6c4.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"React/08-suspense/8-1.suspense.md"}'),a={name:"React/08-suspense/8-1.suspense.md"};function n(r,c,o,p,_,d){return t(),s("div")}const m=e(a,[["render",n]]);export{u as __pageData,m as default};
