@@ -170,14 +170,14 @@ function observe (value, asRootData) {
     Object.isExtensible(value) && // 可扩展
     !value._isVue
   ) {
-    ob = new Observer(value) // 观察者实例
+    ob = new Observer(value) // observer实例
   }
   
   if (asRootData && ob) {
     // 组件的data选项
     ob.vmCount++
   }
-  return ob // 返回观察者实例，在defineReactive中用于递归观察深层次数据和派发更新用
+  return ob // 返回observer实例，在defineReactive中用于递归观察深层次数据和派发更新用
 }
 ```
 
@@ -190,7 +190,7 @@ function observe (value, asRootData) {
 class Observer {
   constructor (value) {
     this.value = value;
-    this.dep = new Dep(); // 该观察者实例的订阅者列表
+    this.dep = new Dep(); // 该实例的订阅者列表
     this.vmCount = 0;
     def(value, '__ob__', this) // obj.__ob__ = observer // 不可枚举
     // 针对数据类型进行深度遍历
@@ -222,7 +222,7 @@ class Observer {
 }
 ```
 
-只针对数据类型为 **数组** 和 **对象** 的数据设置**观察者____ob____，** 同时观察者实例中会有 **Dep** 订阅者列表
+只针对数据类型为 **数组** 和 **对象** 的数据设置**____ob____，** 同时实例中会有 **Dep** 订阅者列表
 
 
 
@@ -260,7 +260,7 @@ function initData (vm) {
 }
 ```
 
-> 需要注意的是：在initData 过程中，shouldOberve是打开的（true），因此会进行深度遍历设置观察者
+> 需要注意的是：在initData 过程中，shouldOberve是打开的（true），因此会进行深度遍历
 
 
 
